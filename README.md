@@ -1,77 +1,85 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7010563&assignment_repo_type=AssignmentRepo)
-# Welcome to GitHub
 
-캡스톤 팀 생성을 축하합니다.
+**팀페이지 주소** -> https://github.com/kookmin-sw/capstone-2022-23
 
-## 팀소개 및 페이지를 꾸며주세요.
+# Mood Decider
 
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
+### 1. 프로젝트 소개
 
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
+#### 👉🏻 개발배경
 
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
+웹툰, 웹소설과 같은 컨텐츠 사업의 규모가 꾸준하게 커지고 있습니다(20년 기준 웹소설 6000억원, 웹툰 1조원 이상).
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
+규모가 커짐에 따라 단순히 그림과 글만이 아닌 배경음악을 넣어 독자가 작품에 더욱 몰입할 수 있도록 창작자들은 청각적 요소까지 고려합니다.
 
-**예시)** 2020년 0조  https://kookmin-sw.github.io/capstone-2020-0/
+매주 같은 시간 내에 창작물을 만들어야하는 창작자들에게 작품에 어울리는 분위기를 찾아주어 한정된 시간을 효율적으로 사용할 수 있도록 도와주는 프로젝트인 Mood Decider를 개발하고자 합니다.
 
+또한 Mood Decider는 특정 창작자뿐만 아니라 감정을 적고 일상을 적어 공유하는 블로거들에게도 글과 이미지를 분석하여 분위기를 알려줌으로써 블로그의 방향성 및 배경음악 선택 등의 도움을 줄 수 있을 것이라 생각합니다.
 
-## 내용에 아래와 같은 내용들을 추가하세요.
+#### 👉🏻 UI설계화면
 
-### 1. 프로잭트 소개
+<img src="./docs/img//usecase.png" width="600px" height="600px"  >
 
-프로젝트
+<img src="https://github.com/sooyeon-kr/capstone-2022-23/blob/main/docs/img/activity.png" width="600px" height="600px" >
+
 
 ### 2. 소개 영상
 
-프로젝트 소개하는 영상을 추가하세요
+추후 작성 예정입니다.
 
 ### 3. 팀 소개
 
-팀을 소개하세요.
+<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+```
+🧑🏻‍💻 Name: 정태원
+🌱 StudentID: ****1703
+📧 Email: tom9816@kookmin.ac.kr
+🔥 Role
+    👉🏻 팀장(인적자원관리)
+    👉🏻 AI(텍스트 분석 파트)
+    👉🏻 Backend
+    👉🏻 데이터 셋 구축 및 모델 학습
+    
+    
+```
+<br/>
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
+
+```
+👨🏻‍💻 Name: 임용빈
+🌱 StudentID: ****1687
+📧 Email: iyb211@kookmin.ac.kr
+🔥 Role
+    👉🏻 AI(이미지 분석 파트)
+    👉🏻 Backend
+    👉🏻 데이터 셋 구축 및 모델 학습
+    👉🏻 모델 성능 향상
+ 
+    
+```
+<br/>
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
+
+```
+👩🏻‍💻 Name: 오수연
+🌱 StudentID: ****5287
+📧 Email: syss@kookmin.ac.kr
+🔥 Role
+    👉🏻 Frontend
+    👉🏻 Backend
+    👉🏻 UI/UX 설계
+    👉🏻 프로젝트 문서 관리
+    
+    
+```
+
+</br>
 
 ### 4. 사용법
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
+추후 작성 예정입니다.
 
 ### 5. 기타
 
-추가적인 내용은 자유롭게 작성하세요.
-
-
-## Markdown을 사용하여 내용꾸미기
-
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Support or Contact
-
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+추후 작성 예정입니다.

@@ -42,7 +42,6 @@
 ```
 <br/>
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="230px">
-
 ```
 👨🏻‍💻 Name: 임용빈
 🌱 StudentID: ****1687

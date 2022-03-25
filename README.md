@@ -42,7 +42,7 @@
     
 ```
    
-<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="260px">
 
 ```
 👨🏻‍💻 Name: 임용빈

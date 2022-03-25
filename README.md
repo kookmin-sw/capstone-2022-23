@@ -42,8 +42,8 @@
 ```
 <br/>
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="230px">
-```
-👨🏻‍💻 Name: 임용빈
+
+```👨🏻‍💻 Name: 임용빈
 🌱 StudentID: ****1687
 📧 Email: iyb211@kookmin.ac.kr
 🔥 Role

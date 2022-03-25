@@ -41,7 +41,7 @@
     👉🏻 데이터 셋 구축 및 모델 학습
     
 ```
-
+   
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
 
 ```

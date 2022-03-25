@@ -26,7 +26,7 @@
 
 ### 3. 팀 소개
 
-<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="230px">
+<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
 
 ```
 🧑🏻‍💻 Name: 정태원
@@ -41,7 +41,7 @@
     
 ```
 <br/>
-<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="240px">
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
 
 ```
 👨🏻‍💻 Name: 임용빈
@@ -56,7 +56,7 @@
     
 ```
 <br/>
-<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="240px">
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
 ```
 👩🏻‍💻 Name: 오수연

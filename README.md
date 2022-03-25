@@ -43,7 +43,6 @@
 ```
    
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="260px">
-
 ```
 👨🏻‍💻 Name: 임용빈
 🌱 StudentID: ****1687
@@ -58,7 +57,6 @@
     
 ```
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
-
 ```
 👩🏻‍💻 Name: 오수연
 🌱 StudentID: ****5287

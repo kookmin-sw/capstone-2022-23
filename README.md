@@ -29,7 +29,6 @@
 <img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
 
 ```
-
 🧑🏻‍💻 Name: 정태원
 🌱 StudentID: ****1703
 📧 Email: tom9816@kookmin.ac.kr
@@ -45,7 +44,6 @@
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
 
 ```
-
 👨🏻‍💻 Name: 임용빈
 🌱 StudentID: ****1687
 📧 Email: iyb211@kookmin.ac.kr
@@ -57,7 +55,6 @@
     👉🏻 모델 성능 향상
     
 ```
-
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
 ```

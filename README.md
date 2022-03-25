@@ -55,7 +55,7 @@
  
     
 ```
-
+<br/>
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="230px">
 
 ```

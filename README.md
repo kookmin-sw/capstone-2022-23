@@ -20,7 +20,7 @@
 
 <img src="./docs/img//usecase.png" width="600px" height="600px"  >
 
-<img src="./docs/img//activity diagram.png" width="600px" height="600px" >
+<img src="./docs/img//activity" "diagram.png" width="600px" height="600px" >
 
 ### 2. 소개 영상
 

@@ -18,9 +18,9 @@
 
 #### 👉🏻 UI설계화면
 
-<img src="./docs/img//design01.png" >
+<img src="./docs/img//usecase.png" width="600px" height="600px"  >
 
-<img src="./docs/img//design04.png" >
+<img src="./docs/img//activity.png" width="600px" height="600px" >
 
 ### 2. 소개 영상
 

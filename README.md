@@ -47,6 +47,7 @@
 👨🏻‍💻 Name: 임용빈
 🌱 StudentID: ****1687
 📧 Email: iyb211@kookmin.ac.kr
+
 🔥 Role
     👉🏻 AI(이미지 분석 파트)
     👉🏻 Backend
@@ -62,6 +63,7 @@
 👩🏻‍💻 Name: 오수연
 🌱 StudentID: ****5287
 📧 Email: syss@kookmin.ac.kr
+
 🔥 Role
     👉🏻 Frontend
     👉🏻 Backend

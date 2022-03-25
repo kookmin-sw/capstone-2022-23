@@ -54,6 +54,7 @@
     👉🏻 데이터 셋 구축 및 모델 학습
     👉🏻 모델 성능 향상
     
+    
 ```
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
@@ -68,6 +69,7 @@
     👉🏻 Backend
     👉🏻 UI/UX 설계
     👉🏻 프로젝트 문서 관리
+    
     
 ```
 

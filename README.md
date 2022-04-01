@@ -30,7 +30,7 @@
 
 <img src="./docs/img//usecase.png" width="800px" height="600px"  >
 
-<img src="https://github.com/sooyeon-kr/capstone-2022-23/blob/main/docs/img/activity.png" width="600px" height="600px" >
+<img src="./docs/img//activity.png" width="600px" height="600px" >
 
 ### 2. 소개 영상
 

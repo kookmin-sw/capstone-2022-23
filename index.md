@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/capstone-2022-23/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
@@ -15,26 +15,6 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
-
-1. 프로잭트 소개
-프로젝트
-
-2. 소개 영상
-프로젝트 소개하는 영상을 추가하세요
-
-3. 팀 소개
-팀을 소개하세요.
-
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
-
-4. 사용법
-소스코드제출시 설치법이나 사용법을 작성하세요.
-
-5. 기타
-추가적인 내용은 자유롭게 작성하세요.
-
-
-
 - Bulleted
 - List
 
@@ -46,12 +26,99 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/capstone-2022-23/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7010563&assignment_repo_type=AssignmentRepo)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**팀페이지 주소** -> https://github.com/kookmin-sw/capstone-2022-23
+
+# Mood Decider
+
+### 1. 프로젝트 소개
+
+#### 👉🏻 개발배경
+
+웹툰, 웹소설과 같은 컨텐츠 사업의 규모가 꾸준하게 커지고 있습니다(20년 기준 웹소설 6000억원, 웹툰 1조원 이상).
+
+규모가 커짐에 따라 단순히 그림과 글만이 아닌 배경음악을 넣어 독자가 작품에 더욱 몰입할 수 있도록 창작자들은 청각적 요소까지 고려합니다.
+
+매주 같은 시간 내에 창작물을 만들어야하는 창작자들에게 작품에 어울리는 분위기를 찾아주어 한정된 시간을 효율적으로 사용할 수 있도록 도와주는 프로젝트인 Mood Decider를 개발하고자 합니다.
+
+또한 Mood Decider는 특정 창작자뿐만 아니라 감정을 적고 일상을 적어 공유하는 블로거들에게도 글과 이미지를 분석하여 분위기를 알려줌으로써 블로그의 방향성 및 배경음악 선택 등의 도움을 줄 수 있을 것이라 생각합니다.
+
+#### 👉🏻 UI설계화면
+<img src="./docs/img/design01.png" width="600px" height="600px"  >
+
+<img src="./docs/img/design04.png" width="600px" height="600px"  >
+
+#### 👉🏻 Diagram
+<img src="./docs/img//usecase.png" width="600px" height="600px"  >
+
+<img src="https://github.com/sooyeon-kr/capstone-2022-23/blob/main/docs/img/activity.png" width="600px" height="600px" >
+
+
+### 2. 소개 영상
+
+추후 작성 예정입니다.
+
+### 3. 팀 소개
+
+<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
+
+```
+🧑🏻‍💻 Name: 정태원
+🌱 StudentID: ****1703
+📧 Email: tom9816@kookmin.ac.kr
+🔥 Role
+    👉🏻 팀장(인적자원관리)
+    👉🏻 AI(텍스트 분석 파트)
+    👉🏻 Backend
+    👉🏻 데이터 셋 구축 및 모델 학습
+    
+    
+```
+<br/>
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
+
+```
+👨🏻‍💻 Name: 임용빈
+🌱 StudentID: ****1687
+📧 Email: iyb211@kookmin.ac.kr
+🔥 Role
+    👉🏻 AI(이미지 분석 파트)
+    👉🏻 Backend
+    👉🏻 데이터 셋 구축 및 모델 학습
+    👉🏻 모델 성능 향상
+ 
+    
+```
+<br/>
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
+
+```
+👩🏻‍💻 Name: 오수연
+🌱 StudentID: ****5287
+📧 Email: syss@kookmin.ac.kr
+🔥 Role
+    👉🏻 Frontend
+    👉🏻 Backend
+    👉🏻 UI/UX 설계
+    👉🏻 프로젝트 문서 관리
+    
+    
+```
+
+</br>
+
+### 4. 사용법
+
+추후 작성 예정입니다.
+
+### 5. 기타
+
+추후 작성 예정입니다.
+

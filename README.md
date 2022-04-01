@@ -17,15 +17,20 @@
 또한 Mood Decider는 특정 창작자뿐만 아니라 감정을 적고 일상을 적어 공유하는 블로거들에게도 글과 이미지를 분석하여 분위기를 알려줌으로써 블로그의 방향성 및 배경음악 선택 등의 도움을 줄 수 있을 것이라 생각합니다.
 
 #### 👉🏻 UI설계화면
-<img src="./docs/img/design01.png" width="600px" height="600px"  >
 
-<img src="./docs/img/design04.png" width="600px" height="600px"  >
+<img src="./docs/img/design01.png" width="900px" height="600px"  >
+
+<img src="./docs/img/design02.png" width="900px" height="600px"  >
+
+<img src="./docs/img/design03.png" width="900px" height="600px"  >
+
+<img src="./docs/img/design04.png" width="900px" height="600px"  >
 
 #### 👉🏻 Diagram
-<img src="./docs/img//usecase.png" width="600px" height="600px"  >
+
+<img src="./docs/img//usecase.png" width="800px" height="600px"  >
 
 <img src="https://github.com/sooyeon-kr/capstone-2022-23/blob/main/docs/img/activity.png" width="600px" height="600px" >
-
 
 ### 2. 소개 영상
 
@@ -44,9 +49,10 @@
     👉🏻 AI(텍스트 분석 파트)
     👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
-    
-    
+
+
 ```
+
 <br/>
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
 
@@ -59,9 +65,10 @@
     👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
     👉🏻 모델 성능 향상
- 
-    
+
+
 ```
+
 <br/>
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
@@ -74,8 +81,8 @@
     👉🏻 Backend
     👉🏻 UI/UX 설계
     👉🏻 프로젝트 문서 관리
-    
-    
+
+
 ```
 
 </br>

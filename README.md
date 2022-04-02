@@ -34,7 +34,7 @@
 
 ### 2. 소개 영상
 
-추후 작성 예정입니다.
+[![Mood Decider](https://img.youtube.com/vi/DZUP4tkgEfk/0.jpg)](https://www.youtube.com/watch?v=DZUP4tkgEfk)
 
 ### 3. 팀 소개
 

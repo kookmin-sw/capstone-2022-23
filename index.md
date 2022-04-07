@@ -73,7 +73,6 @@
 
 ```
 
-<br/>
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
 ```
@@ -88,8 +87,6 @@
 
 
 ```
-
-</br>
 
 ## 4. 사용법
 

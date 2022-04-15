@@ -4,7 +4,7 @@
 
 # Mood Decider
 
-### 1. 프로젝트 소개
+## 1. 프로젝트 소개
 
 #### 👉🏻 개발배경
 
@@ -15,6 +15,10 @@
 매주 같은 시간 내에 창작물을 만들어야하는 창작자들에게 작품에 어울리는 분위기를 찾아주어 한정된 시간을 효율적으로 사용할 수 있도록 도와주는 프로젝트인 Mood Decider를 개발하고자 합니다.
 
 또한 Mood Decider는 특정 창작자뿐만 아니라 감정을 적고 일상을 적어 공유하는 블로거들에게도 글과 이미지를 분석하여 분위기를 알려줌으로써 블로그의 방향성 및 배경음악 선택 등의 도움을 줄 수 있을 것이라 생각합니다.
+
+#### 👉🏻 시스템구조도
+
+<img src="./docs/img/architecture.png" width="900px" height="300px"  >
 
 #### 👉🏻 UI설계화면
 
@@ -32,11 +36,11 @@
 
 <img src="./docs/img//activity.png" width="600px" height="600px" >
 
-### 2. 소개 영상
+## 2. 소개 영상
 
-추후 작성 예정입니다.
+[![Mood Decider](https://img.youtube.com/vi/DZUP4tkgEfk/0.jpg)](https://www.youtube.com/watch?v=DZUP4tkgEfk)
 
-### 3. 팀 소개
+## 3. 팀 소개
 
 <img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
 
@@ -87,10 +91,10 @@
 
 </br>
 
-### 4. 사용법
+## 4. 사용법
 
 추후 작성 예정입니다.
 
-### 5. 기타
+## 5. 기타
 
 추후 작성 예정입니다.

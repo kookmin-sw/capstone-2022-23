@@ -32,7 +32,7 @@
 
 #### 👉🏻 Diagram
 
-<img src="./docs/img//usecase.png" width="800px" height="600px"  >
+<img src="./docs/img//usecase_modi.png" width="800px" height="600px"  >
 
 <img src="./docs/img//activity.png" width="600px" height="600px" >
 

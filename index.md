@@ -1,46 +1,12 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7010563&assignment_repo_type=AssignmentRepo)
 
 **팀페이지 주소** -> https://github.com/kookmin-sw/capstone-2022-23
 
 # Mood Decider
 
-### 1. 프로젝트 소개
+## 1. 프로젝트 소개
 
-#### 👉🏻 개발배경
+### 👉🏻 개발배경
 
 웹툰, 웹소설과 같은 컨텐츠 사업의 규모가 꾸준하게 커지고 있습니다(20년 기준 웹소설 6000억원, 웹툰 1조원 이상).
 
@@ -50,22 +16,31 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 또한 Mood Decider는 특정 창작자뿐만 아니라 감정을 적고 일상을 적어 공유하는 블로거들에게도 글과 이미지를 분석하여 분위기를 알려줌으로써 블로그의 방향성 및 배경음악 선택 등의 도움을 줄 수 있을 것이라 생각합니다.
 
-#### 👉🏻 UI설계화면
-<img src="./docs/img/design01.png" width="600px" height="600px"  >
+### 👉🏻 시스템구조도
 
-<img src="./docs/img/design04.png" width="600px" height="600px"  >
+<img src="./docs/img/architecture.png" width="900px" height="300px"  >
 
-#### 👉🏻 Diagram
-<img src="./docs/img//usecase.png" width="600px" height="600px"  >
+### 👉🏻 UI설계화면
 
-<img src="https://github.com/sooyeon-kr/capstone-2022-23/blob/main/docs/img/activity.png" width="600px" height="600px" >
+<img src="./docs/img/design01.png" width="900px" height="600px"  >
 
+<img src="./docs/img/design02.png" width="900px" height="600px"  >
 
-### 2. 소개 영상
+<img src="./docs/img/design03.png" width="900px" height="600px"  >
 
-추후 작성 예정입니다.
+<img src="./docs/img/design04.png" width="900px" height="600px"  >
 
-### 3. 팀 소개
+### 👉🏻 Diagram
+
+<img src="./docs/img//usecase.png" width="800px" height="600px"  >
+
+<img src="./docs/img//activity.png" width="600px" height="600px" >
+
+## 2. 소개 영상
+
+[![Mood Decider](https://img.youtube.com/vi/DZUP4tkgEfk/0.jpg)](https://www.youtube.com/watch?v=DZUP4tkgEfk)
+
+## 3. 팀 소개
 
 <img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
 
@@ -78,9 +53,10 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
     👉🏻 AI(텍스트 분석 파트)
     👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
-    
-    
+
+
 ```
+
 <br/>
 <img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
 
@@ -93,9 +69,10 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
     👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
     👉🏻 모델 성능 향상
- 
-    
+
+
 ```
+
 <br/>
 <img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
 
@@ -108,17 +85,16 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
     👉🏻 Backend
     👉🏻 UI/UX 설계
     👉🏻 프로젝트 문서 관리
-    
-    
+
+
 ```
 
 </br>
 
-### 4. 사용법
+## 4. 사용법
 
 추후 작성 예정입니다.
 
-### 5. 기타
+## 5. 기타
 
 추후 작성 예정입니다.
-

@@ -1,0 +1,68 @@
+{% extends 'accounts/layout.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+
+  {% buttons %}
+  <button class="btn btn-primary mb-4 w-100">로그인</button>
+  {% endbuttons %}
+</form>
+
+<section class="py-5">
+  <div class="container text-center">
+    <a class="d-inline-block mb-5" href="/">
+      <img src="{%static "mdlogo.png" %}" alt="" width="200">
+    </a>
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-5 mx-auto">
+        <div class="px-4 mb-4">
+          <form action="#">
+            <span class="fs-2 text-muted">로그인</span>
+            <a href="/signup/">
+              <h6 class="mb-4 fw-light">계정을 생성해야 합니다.</h6>
+            </a>
+            <div class="mb-3 input-group">
+              <input class="form-control" type="email" placeholder="name@email.com">
+              <span class="input-group-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                  </path>
+                </svg>
+              </span>
+            </div>
+            <div class="mb-3 input-group">
+              <input class="form-control" type="password" placeholder="Enter your password">
+              <div class="input-group-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <button class="btn btn-primary mb-4 w-100">로그인</button>
+            {% comment %} <p class="mb-4 text-muted">or continue with</p>
+            <button class="btn btn-outline-secondary mb-2 w-100 text-start" href="#">
+              <img class="img-fluid me-2" src="metis-assets/logos/facebook-sign.svg">
+              <span>Sign In with Facebook</span>
+            </button>
+            <button class="btn btn-outline-secondary w-100 text-start" href="#">
+              <img class="img-fluid me-2" src="metis-assets/logos/google-sign.svg">
+              <span>Sign In with Google</span>
+            </button> {% endcomment %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

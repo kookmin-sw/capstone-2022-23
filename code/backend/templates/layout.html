@@ -1,108 +1,122 @@
 {%extends "raw.html" %}
 {% load static %}
 {% block nav %}
-  <section>
-    <nav class="position-relative navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="{%static "mdlogo.png" %}" alt="" width="200">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav position-absolute top-50 start-50 translate-middle">
+<section>
+  <nav class="position-relative navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="{%static "mdlogo.png" %}" alt="" width="200">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="side-menu" data-target="#sideMenu04"
+        aria-controls="sideMenu04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav position-absolute top-50 start-50 translate-middle">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="/whymd/">why MD?</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="/manual/">이용방법</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="/search/">Mood 검색</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="/result/">검색결과리스트</a>
+          </li>
+        </ul>
+        <div class="ms-auto">
+          {% if not user.is_authenticated %}
+          <a class="btn btn-primary" href="/accounts/login/">로그인</a>
+          <a class="btn btn-outline-primary me-2" href="/accounts/signup/">회원가입</a>
+          {% else %}
+          <a class="btn btn-secondary" href="/accounts/logout/">로그아웃</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-none fixed-top top-0 bottom-0" id="sideMenu04">
+    <div class="position-absolute top-0 end-0 bottom-0 start-0 bg-dark" style="opacity: 0.7"></div>
+    <nav class="navbar navbar-light position-absolute top-0 bottom-0 start-0 w-75 pt-3 pb-4 px-4 bg-white"
+      style="overflow-y: auto;">
+      <div class="d-flex flex-column w-100 h-100">
+        <div class="d-flex justify-content-between mb-4">
+          <a href="#">
+            <img class="img-fluid" src=" {%static "mdlogo.png" %} " alt="" width=" 106">
+          </a>
+          <button class="btn-close" type="button" data-toggle="side-menu" data-target="#sideMenu04"
+            aria-controls="sideMenu04" aria-label="Close"></button>
+        </div>
+        <div>
+          <ul class="navbar-nav mb-4">
             <li class="nav-item me-4">
               <a class="nav-link" href="/whymd/">why MD?</a>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item">
               <a class="nav-link" href="/manual/">이용방법</a>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item">
               <a class="nav-link" href="/search/">Mood 검색</a>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item">
               <a class="nav-link" href="/result/">검색결과리스트</a>
             </li>
           </ul>
-          <div class="ms-auto">
-            <a class="btn btn-outline-primary me-2" href="/signin/">로그인</a>
-            <a class="btn btn-primary" href="/signup/">회원가입</a>
+          <div class="border-top pt-4 mb-5">
+            {% if not user.is_authenticated %}
+            <a class="btn btn-primary w-35 " href="/accounts/login/">로그인</a>
+            <a class="btn btn-outline-primary w-35 mb-2" href="/accounts/signup/">회원가입</a>
+            {% else %}
+            <a class="btn btn-secondary w-35 mb-2 " href="/accounts/logout/">로그아웃</a>
+            {% endif %}
           </div>
         </div>
       </div>
     </nav>
-    <div class="d-none fixed-top top-0 bottom-0" id="sideMenu04">
-      <div class="position-absolute top-0 end-0 bottom-0 start-0 bg-dark" style="opacity: 0.7"></div>
-      <nav class="navbar navbar-light position-absolute top-0 bottom-0 start-0 w-75 pt-3 pb-4 px-4 bg-white" style="overflow-y: auto;">
-        <div class="d-flex flex-column w-100 h-100">
-          <div class="d-flex justify-content-between mb-4">
-            <a href="#">
-              <img class="img-fluid" src=" {%static "mdlogo.png" %} " alt="" width=" 106">
-            </a>
-            <button class="btn-close" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-label="Close"></button>
-          </div>
-          <div>
-            <ul class="navbar-nav mb-4">
-              <li class="nav-item me-4">
-                <a class="nav-link" href="/whymd/">why MD?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/manual/">이용방법</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/search/">Mood 검색</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/result/">검색결과리스트</a>
-              </li>
-            </ul>
-            <div class="border-top pt-4 mb-5">
-              <a class="btn btn-outline-primary w-100 mb-2" href="/signin/">로그인</a>
-              <a class="btn btn-primary w-100" href="/signup/">회원가입</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
+  </div>
+</section>
 {% endblock nav %}
 {% block content %}{% endblock %}
 {% block footer %}
-  <section class="py-5">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-12 col-lg-2 mb-4 mb-lg-0 text-center text-lg-left">
-          <a class="navbar-brand" href="#">
-            <img class="img-fluid" src="{%static "mdlogo.png" %}" " alt=" " width=" 106"=" 106""=" 106" "">
-          </a>
-        </div>
-        <div class=" col-12 col-lg-4 mb-5 mb-lg-0 text-center text-lg-left">
-          <p class="text-muted fs-6 mb-0">A system that analyzes URLs and recommends moods(atmosphere) of the content.</p>
-        </div>
-        <div class="col-12 col-lg-3 mb-4 mb-lg-0 text-center text-lg-left">
-          <h6 class="fw-bold">Team</h6>
-          <p class="fs-6 text-muted mb-0">Kookmin Univ. SW. 2022-Capstone-23</p>
-        </div>
-        <div class="col-12 col-lg-3 text-center text-lg-left">
-          <h6 class="fw-bold">Contacts</h6>
-          <p class="fs-6 text-muted mb-0">syss@kookmin.ac.kr</p>
-          <p class="fs-6 text-muted mb-0">iyb211@kookmin.ac.kr</p>
-          <p class="fs-6 text-muted mb-0">tom9816@kookmin.ac.kr</p>
-        </div>
+<section class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 col-lg-2 mb-4 mb-lg-0 text-center text-lg-left">
+        <a class="navbar-brand" href="#">
+          <img class="img-fluid" src="{%static "mdlogo.png" %}" " alt=" " width=" 106"=" 106""=" 106" "">
+        </a>
       </div>
-      <div class="row">
-        <div class="col-12 col-lg-6 text-center text-lg-left order-1 order-lg-0">
-          <p class="small text-muted">©Mood Decider. All rights reserved.</p>
-        </div>
-        <div class="col-12 col-lg-6 mb-4 mb-lg-0 text-center text-lg-right">
-          <a class="me-3" href="https://github.com/kookmin-sw/capstone-2022-23">
-            <svg height="32" aria-hidden="true" viewbox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
-              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-          </a>
-        </div>
+      <div class=" col-12 col-lg-4 mb-5 mb-lg-0 text-center text-lg-left">
+        <p class="text-muted fs-6 mb-0">A system that analyzes URLs and recommends moods(atmosphere) of the content.</p>
+      </div>
+      <div class="col-12 col-lg-3 mb-4 mb-lg-0 text-center text-lg-left">
+        <h6 class="fw-bold">Team</h6>
+        <p class="fs-6 text-muted mb-0">Kookmin Univ. SW. 2022-Capstone-23</p>
+      </div>
+      <div class="col-12 col-lg-3 text-center text-lg-left">
+        <h6 class="fw-bold">Contacts</h6>
+        <p class="fs-6 text-muted mb-0">syss@kookmin.ac.kr</p>
+        <p class="fs-6 text-muted mb-0">iyb211@kookmin.ac.kr</p>
+        <p class="fs-6 text-muted mb-0">tom9816@kookmin.ac.kr</p>
       </div>
     </div>
-  </section>
+    <div class="row">
+      <div class="col-12 col-lg-6 text-center text-lg-left order-1 order-lg-0">
+        <p class="small text-muted">©Mood Decider. All rights reserved.</p>
+      </div>
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0 text-center text-lg-right">
+        <a class="me-3" href="https://github.com/kookmin-sw/capstone-2022-23">
+          <svg height="32" aria-hidden="true" viewbox="0 0 16 16" version="1.1" width="32" data-view-component="true"
+            class="octicon octicon-mark-github v-align-middle">
+            <path fill-rule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock footer%}

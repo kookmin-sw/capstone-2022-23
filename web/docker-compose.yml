@@ -1,0 +1,67 @@
+version: "3"
+
+volumes:
+  postgres_db_dev: {}
+
+services:
+  postgres:
+      restart: always
+      container_name: postgres
+      image: postgres
+      environment:
+        - POSTGRES_DB=mddb
+        - POSTGRES_USER=md
+        - POSTGRES_PASSWORD=1234
+        - POSTGRES_PORT=5432
+        - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+        #this ENV variable is only required for the healthcheck section - if you don't specify it, the check command will fail stating the root user doesn't exist in posgres
+      healthcheck:
+      #CHANGE 1: this command checks if the database is ready, right on the source db server
+        test: [ "CMD-SHELL", "pg_isready -d mddb -U md"]
+        interval: 5s
+        timeout: 5s
+        retries: 5
+      volumes:
+        - postgres_db_dev:/var/lib/postgresql/data
+      working_dir: /var/lib/postgresql/data
+        
+        #   - ./data/db: /code/data
+        #   - /var/lib/postgres
+        # - ./dbscripts/postgres:/docker-entrypoint-initdb.d
+
+    # db:
+    #   container_name: postgres_service
+    #   image: postgres
+    #   volumes:
+    #     - ./data/db: /code/data
+    #   restart: always
+    #   ports:
+    #     - "5432:5432"
+    #   environment:
+    #     - POSTGRES_USER="${DB_USER_ID}"
+    #     - POSTGRES_PASSWORD="${DB_USER_PASSWORD}"
+    #     - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+
+  django:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: django_service
+    environment:
+        - POSTGRES_DB=mddb
+        - POSTGRES_USER=md
+        - POSTGRES_PASSWORD=1234
+        - POSTGRES_HOST=postgres
+        - POSTGRES_PORT=5432        
+    command: >
+      sh -c "chmod +x /wait-for-it.sh && /wait-for-it.sh postgres:5432 -t 10 && python3 manage.py migrate && python3 manage.py runserver"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+      # links:
+      #   - "db:db"
+    expose:
+      - 8000

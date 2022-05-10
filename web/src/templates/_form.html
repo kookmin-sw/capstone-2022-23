@@ -1,0 +1,37 @@
+{% load bootstrap5 %}
+{% load static %}
+{% block content %}
+<div class="">
+    <section class="py-5">
+        <div class="container offset-md-3">
+            <a class="d-inline-block mb-5" href="/">
+                <img src="{%static "mdlogo.png" %}" alt="" width="200">
+            </a>
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-5 mx-auto">
+                    <div class="col-sm-12">
+                        <span class="fs-2 text-muted">{{ title_label | default:""}}</span>
+                        <a href={{ notice_a | default:"/"}}>
+                            <h6 class=" mb-4 fw-light">{{ notice_label | default:"notice"}}</h6>
+                        </a>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value={{ request.GET.next }} />
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    {% bootstrap_form form %}
+                                </div>
+                            </div>
+                            {% buttons %}
+                            <button type="submit" class="btn btn-primary">
+                                {{ submit_label | default:"submit"}}
+                            </button>
+                            {% endbuttons %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+#The docker-compose file was written by referring to 
+#https://github.com/ruddra/docker-django to deploy Django 
+#using Nginx, Celery, Redis, and Postgresql with Docker.
+version: "3"
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+      - ./config/nginx:/etc/nginx/conf.d
+      - ./src/static:/static
+    depends_on:
+      - web
+    networks:
+      - djangonetwork
+  web:
+    build:
+      context: .
+      dockerfile: compose/django/Dockerfile
+    container_name: django-service
+    depends_on:
+      - db
+    volumes:
+      - ./src:/src
+      - ./src/static:/static
+    expose:
+      - "8000"
+    links:
+      - redis
+    env_file:
+      - ./.envs/.django
+    networks:
+      - djangonetwork
+    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations && python3 manage.py migrate && gunicorn web.wsgi -b 0.0.0.0:8000"
+  db:
+    build:
+      context: .
+      dockerfile: compose/postgres/Dockerfile
+    container_name: postgres-service
+    env_file:
+      - ./.envs/.postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
+    networks:
+      - djangonetwork
+  redis:
+    image: redis:alpine
+    container_name: redis-service
+    ports:
+      - "6379:6379"
+    networks:
+      - djangonetwork
+  
+networks:
+  djangonetwork:
+    driver: bridge

@@ -55,14 +55,14 @@ if os.path.exists(hdf5_file):
     model.load_weights(hdf5_file)
 else:
     # 학습한 모델이 없으면 파일로 저장
-    model.fit(X_train, y_train, batch_size=32, epochs=10)
+    model.fit(X_train, y_train, batch_size=32, epochs=50)
     model.save_weights(hdf5_file)
 
 score = model.evaluate(X_test, y_test)
 print('loss=', score[0])        # loss
 print('accuracy=', score[1])    # acc
 
-test_image = './testimg_angry.jpg'
+test_image = './testimg_unknown.jpg'
 # 이미지 resize
 img = Image.open(test_image)
 img = img.convert("RGB")

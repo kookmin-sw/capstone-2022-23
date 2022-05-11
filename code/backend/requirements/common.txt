@@ -1,3 +1,0 @@
-django~=4.0.3
-
-django-bootstrap5

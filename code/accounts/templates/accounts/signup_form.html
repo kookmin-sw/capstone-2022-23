@@ -1,7 +1,0 @@
-{% extends 'accounts/raw.html' %}
-
-{% load bootstrap5 %}
-{% load static %}
-{% block content %}
-{% include "_form.html" with title_label="회원가입" notice_label="계정이 이미 존재합니다." notice_a="/accounts/login/" submit_label="회원가입" %}
-{% endblock %}

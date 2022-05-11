@@ -9,7 +9,8 @@
         {% if user.is_authenticated %}
         <h5>{{user.username}}님, 안녕하세요</h5>
         {% else %}
-        <h5>guest님, 안녕하세요.<br>intro와 manual을 읽어보시면 서비스 이용에 도움이 됩니다.<br>서비스는 회원가입 후 이용가능합니다.</h5>
+        <p class="text">guest님, 안녕하세요😄<br><br>intro와 manual은 서비스 이용에 도움이 됩니다.</p><br>
+        <h6>서비스는 회원 가입 후 이용 가능합니다.</h6>
         {% endif %}
         <img class="position-relative mx-auto rounded w-100" style="z-index:10"
           src="https://images.unsplash.com/photo-1536940135352-b4b3875df888?ixlib=rb-1.2.1&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1050&amp;amp;h=1050&amp;amp;q=80"

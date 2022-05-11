@@ -6,8 +6,8 @@
 
     <div class="row align-items-center">
       <div class="position-relative col-12 col-lg-6 order-last mt-5 mt-lg-0">
-        {% if user.is_authenticated %}
-        <h5>{{user.username}}님, 안녕하세요</h5>
+        {% if request.user.is_authenticated %}
+        <h5>{{request.user.username}}님, 안녕하세요</h5>
         {% else %}
         <p class="text">guest님, 안녕하세요😄<br><br>intro와 manual은 서비스 이용에 도움이 됩니다.</p><br>
         <h6>서비스는 회원 가입 후 이용 가능합니다.</h6>

@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # Thired Apps
     "celery",
     "bootstrap5",
+    "django_celery_results",
     # Locales Apps
     "apps.accounts",
     "apps.decider",

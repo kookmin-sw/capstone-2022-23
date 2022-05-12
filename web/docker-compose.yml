@@ -39,7 +39,7 @@ services:
       - ./.envs/.django
     networks:
       - djangonetwork
-    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations && python3 manage.py migrate && gunicorn web.wsgi -b 0.0.0.0:8000"
+    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations && python3 manage.py migrate && gunicorn web.wsgi -b 0.0.0.0:8000 && celery -A web worker --loglevel=INFO"
   db:
     build:
       context: .

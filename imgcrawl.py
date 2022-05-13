@@ -1,4 +1,3 @@
-from urllib import request
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
@@ -6,6 +5,9 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 import requests
+import json
+
+categories = ["anger","fear","joy","love","sadness","surprise"]
 
 hdr={'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
 url = "https://www.google.com/search?q=google&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjTsKT5xdf3AhWUBt4KHRfDACcQ_AUoAXoECAIQAw&biw=1920&bih=937&dpr=1"
@@ -21,9 +23,9 @@ for i, img in enumerate(images):
     print(src)
     if src == None:
         continue
-    """if not src.startswith('http'):
-        continue"""
-    if src.endswith('svg'):
+    if not src.startswith('http'):
+        continue
+    if src.endswith('.svg') or '.gif' in src:
         continue
 
 
@@ -37,7 +39,14 @@ for i, img in enumerate(images):
     X = X.astype("float") / 256
     X = X.reshape(-1, 64, 64,3)
 
-    print(X)
+    address = 'http://localhost:8501/v1/models/resnet152:predict'
+    data = json.dumps({'instances':X.tolist()})
+
+    result = requests.post(address, data=data)
+    predictions = json.loads(str(result.content, 'utf-8'))['predictions']
+
+    for prediction in predictions:
+        print('New data category : ',categories[np.argmax(prediction)])
     
 
 

@@ -20,4 +20,5 @@ app.autodiscover_tasks()
 # bind=True옵션으로 task인스턴스를 참조하여 자신의 request 정보를 쉽게 뽑을 수 있음.
 @app.task(bind=True)
 def debug_task(self):
-    print("Request: {0!r}".format(self.request))
+    # print("Request: {0!r}".format(self.request))
+    pass

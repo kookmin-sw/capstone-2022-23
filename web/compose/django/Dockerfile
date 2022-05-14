@@ -13,12 +13,14 @@ WORKDIR /src
 ADD ./src /src
 RUN apk update && apk add --no-cache \
     postgresql \
-    zlib \
+    zlib \  
     jpeg \
     openblas \ 
     libstdc++ 
 
 RUN apk add --no-cache --virtual build-deps \
+    libxml2-dev \
+    libxslt-dev \
     gcc \  
     python3-dev \ 
     musl-dev \
@@ -29,14 +31,13 @@ RUN apk add --no-cache --virtual build-deps \
     cmake \
     && ln -s /usr/include/locale.h /usr/include/xlocale.h
 
-RUN pip install --upgrade pip
-
+RUN pip3 install --upgrade pip
 COPY ./config/requirements.txt /config/
 RUN pip install --no-cache-dir -r /config/requirements.txt
 
 # removing temporary packages from docker and removing cache 
 RUN apk del build-deps && \
-    find -type d -name __pycache__ -prune -exec rm -rf {} \; 
+    find -type d -name __pycache__ -prune -exec rm -rf {} \;
 
 # CMD will run when this dockerfile is running
 # CMD ["sh", "-c", "python3 manage.py collectstatic --no-input; python3 manage.py migrate; gunicorn web.wsgi -b 0.0.0.0:8000 & celery --app decider.tasks worker --loglevel=INFO"]

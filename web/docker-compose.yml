@@ -22,6 +22,7 @@ services:
     networks:
       - djangonetwork
   web:
+    restart: always
     build:
       context: .
       dockerfile: compose/django/Dockerfile

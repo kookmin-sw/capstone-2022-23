@@ -1,1 +1,0 @@
-version for smaller model

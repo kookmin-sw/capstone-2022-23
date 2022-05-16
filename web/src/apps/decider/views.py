@@ -6,7 +6,8 @@ from . import tasks
 @login_required
 def mood_search(request):
     bar = tasks.crawl()
-    context = {"foo": bar}
+    taewon = tasks.get_tokenized()
+    context = {"foo": bar, "taewon": taewon}
     return render(request, "search.html", context)
 
 

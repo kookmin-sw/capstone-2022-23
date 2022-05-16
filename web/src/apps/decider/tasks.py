@@ -7,6 +7,12 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 import requests
+import nltk
+import pickle5 as pickle
+from konlpy.tag import Kkma
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+from tensorflow.keras.preprocessing.text import Tokenizer
 
 
 @shared_task
@@ -43,6 +49,21 @@ def crawl():
         X = X.reshape(-1, 64, 64, 3)
 
     return X
+
+
+@shared_task
+def get_tokenized():
+    with open("apps/decider/TokenafterSentence.pickle", "rb") as f:
+        list_ex = pickle.load(f)
+
+    kkma = Kkma()
+    tokenizer = Tokenizer(19845)
+    tokenizer.fit_on_texts(list_ex)
+    # only_text = crawl()
+
+    only_text = "test.테스트"
+    tokens = kkma.sentences(only_text)
+    return tokens, tokenizer
 
 
 @shared_task

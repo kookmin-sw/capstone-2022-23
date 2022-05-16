@@ -60,7 +60,20 @@ services:
       - "6379:6379"
     networks:
       - djangonetwork
-  
+  tensorflowserving:
+    image: cedricbl/tf-serving-universal-amd64
+    platform: linux/amd64
+    volumes:
+      - type: bind
+        source: ./LSTM
+        target: /models/LSTM
+    environment:
+      - MODEL_NAME=LSTM
+    networks:
+      - djangonetwork
+    ports:
+      - "8501:8501"
+
 networks:
   djangonetwork:
     driver: bridge

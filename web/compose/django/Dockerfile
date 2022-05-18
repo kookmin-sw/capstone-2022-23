@@ -11,9 +11,7 @@ RUN mkdir /config
 WORKDIR /src
 ADD ./src /src
 
-RUN apt-get update && \
-    apt-get install -y openjdk-11-jre-headless && \
-    apt-get clean;
+RUN apt-get update && apt-get install -y openjdk-11-jre-headless && apt-get clean
 
 RUN apt-get update && apt-get install -y \
     postgresql \

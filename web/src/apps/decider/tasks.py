@@ -14,6 +14,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from tensorflow.keras.preprocessing.text import Tokenizer
 import json
+from .models import Result, Site
 
 TENSER_SERVING_URL = "http://mooddecider.com:8501/v1/models/LSTM:predict"
 
@@ -52,6 +53,16 @@ TENSER_SERVING_URL = "http://mooddecider.com:8501/v1/models/LSTM:predict"
 #         X = X.reshape(-1, 64, 64, 3)
 
 #     return X
+
+@shared_task
+def trigger(user, site):
+    only_text = get_mood(site.url)
+    qs = Result.objects.get(url=site, user=user)
+    qs.status = 'completion'
+    qs.mood = only_text
+    qs.save()
+    
+    
 @shared_task
 def get_tokenized(only_text):
     with open("TokenafterSentence.pickle", "rb") as f:
@@ -65,15 +76,14 @@ def get_tokenized(only_text):
     return tokens, tokenizer
 
 @shared_task
-def crawl(url):
-    # url = "https://blog.daum.net/9855/79"
+def crawl(url: str) -> str:
     html = urlopen(url).read()
     soup = BeautifulSoup(html, "html.parser")
     only_text = soup.get_text()
     return only_text
 
 @shared_task
-def get_crawling_text_return_mood(url):
+def get_mood(url: str) -> str:
     only_text = crawl(url)
     tokens, tokenizer = get_tokenized(only_text)
     top_three = [0 for _ in range(13)]
@@ -117,7 +127,7 @@ def get_crawling_text_return_mood(url):
     # return render(request, "decider.html", context=context)
 
 # @shared_task
-# def get_crawling_text_return_mood():
+# def get_mood():
 #     kkma = Kkma()
 #     url = "https://blog.daum.net/9855/79"
 #     res = req.urlopen(url).read()

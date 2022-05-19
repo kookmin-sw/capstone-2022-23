@@ -4,13 +4,18 @@ from . import views
 
 urlpatterns = [
     path(
-        "search/",
+        "search/<int:pk>/",
         views.mood_search,
         name="search",
     ),
     path(
-        "result/",
+        "result/<int:pk>/",
         views.mood_result,
         name="result",
+    ),
+    path(
+        "test/",
+        views.test,
+        name="test",
     ),
 ]

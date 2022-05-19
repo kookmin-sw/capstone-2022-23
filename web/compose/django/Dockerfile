@@ -1,9 +1,8 @@
 #The Dockerfile was written by referring to 
 #https://github.com/ruddra/docker-django to deploy Django 
 #using Nginx, Celery, Redis, and Postgresql with Docker.
-FROM python:3.6-alpine
+FROM python:3.9
 ENV PYTHONUNBUFFERED 1
-ENV C_FORCE_ROOT true
 
 RUN mkdir /src
 RUN mkdir /static
@@ -11,32 +10,22 @@ RUN mkdir /config
 
 WORKDIR /src
 ADD ./src /src
-RUN apk update && apk add --no-cache \
+
+RUN apt-get update && apt-get install -y openjdk-11-jre-headless && apt-get clean
+
+RUN apt-get update && apt-get install -y \
     postgresql \
-    zlib \
-    jpeg \
-    openblas \ 
-    libstdc++ 
-
-RUN apk add --no-cache --virtual build-deps \
-    gcc \  
-    python3-dev \ 
-    musl-dev \
-    postgresql-dev\
-    zlib-dev \
-    jpeg-dev \ 
-    openblas-dev \
+    libxml2-dev  \  
+    libxslt-dev \
     cmake \
-    && ln -s /usr/include/locale.h /usr/include/xlocale.h
+    musl-dev 
 
-RUN pip install --upgrade pip
-
+RUN pip3 install --upgrade pip
 COPY ./config/requirements.txt /config/
-RUN pip install --no-cache-dir -r /config/requirements.txt
+RUN pip install --no-cache-dir -r /config/requirements.txt && pip3 install tensorflow-aarch64 -f https://cf.tf.kmtea.eu/whl/stable.html
 
 # removing temporary packages from docker and removing cache 
-RUN apk del build-deps && \
-    find -type d -name __pycache__ -prune -exec rm -rf {} \; 
+# RUN apt-get del build-deps && find -type d -name __pycache__ -prune -exec rm -rf {} \
 
 # CMD will run when this dockerfile is running
 # CMD ["sh", "-c", "python3 manage.py collectstatic --no-input; python3 manage.py migrate; gunicorn web.wsgi -b 0.0.0.0:8000 & celery --app decider.tasks worker --loglevel=INFO"]

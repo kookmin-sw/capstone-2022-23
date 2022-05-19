@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load static %}
 {% block content %}
 <div>
   <section class="py-5">
@@ -14,10 +15,11 @@
           <p class="text-muted mb-0">분석하고자 하는 URL을 입력하세요.</p>
         </div>
       </div>
-      <div class="row">
+      <div id="row123" class="row">
         <div class="col-12  d-flex flex-column justify-content-center">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-8 mb-3 mb-md-0">
+          <div class="justify-content-center">
+            <form method="post" action=".">
+              {% csrf_token %}
               <div class="input-group">
                 <span class="input-group-text px-3 bg-light rounded-left">
                   <svg width="24" height="24" fill="none" stroke="currentColor" viewbox="0 0 24 24"
@@ -40,11 +42,14 @@
                     </svg>
                   </svg>
                 </span>
-                <input class="form-control" type="text" placeholder="Type your URL">
+                <input id="myInput" name="input_url" class="form-control" type="text" placeholder="Type your URL">
+                <div class="col-12 col-md-auto px-2">
+                  <button id="myBtn" type="submit" class="w-100 btn btn-primary" onclick="handleClick();">분석하기</button>
+                </div>
               </div>
-            </div>
-            <div class="col-12 col-md-auto">
-              <button class="w-100 btn btn-primary" type="submit">분석하기</button>
+            </form>
+            <div class="d-flex flex-column justify-content-center text-center">
+              <img id="myImg" alt="loading" src="{% static 'loading.gif' %}" style="display: none;" width="600">
             </div>
           </div>
         </div>

@@ -4,9 +4,8 @@ celery==5.0.5
 Django==3.2
 gunicorn==20.0.4
 kombu==5.0.2
-pillow==8.1.0
+Pillow==8.1.0
 psycopg2==2.8.6
-pytz==2020.5
 redis==3.5.3
 sqlparse==0.4.1
 vine==5.0.0
@@ -15,3 +14,15 @@ redis
 django-environ
 django-model-utils
 django-bootstrap-v5
+sqlalchemy==1.3.13
+django-celery-results
+bs4
+urllib3==1.25.8
+numpy
+requests
+zeep
+lxml
+jpype1
+konlpy
+pickle5
+nltk

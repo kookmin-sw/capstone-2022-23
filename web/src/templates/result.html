@@ -13,7 +13,23 @@
             <th>결과</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {% if result_list %}
+          {% for result in result_list %}
+          <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ result.created_at }}</td>
+            <td>{{ result.url }}</td>
+            <td>{{ result.status }}</td>
+            <td>{{ result.mood }}</td>
+          </tr>
+          {% endfor %}
+          {% else %}
+          <tr>
+            <td colspan="5"> 분석 결과가 없습니다. </td>
+          </tr>
+          {% endif %}
+        </tbody>
       </table>
     </div>
   </div>

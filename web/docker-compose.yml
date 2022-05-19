@@ -11,6 +11,7 @@ services:
   nginx:
     image: nginx:alpine
     container_name: nginx-service
+    restart: always
     ports:
       - "8000:8000"
     volumes:
@@ -22,6 +23,7 @@ services:
     networks:
       - djangonetwork
   web:
+    restart: always
     build:
       context: .
       dockerfile: compose/django/Dockerfile
@@ -39,7 +41,7 @@ services:
       - ./.envs/.django
     networks:
       - djangonetwork
-    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations && python3 manage.py migrate && gunicorn web.wsgi -b 0.0.0.0:8000"
+    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations && python3 manage.py migrate && gunicorn web.wsgi -b 0.0.0.0:8000 -t 300 && celery -A web worker --loglevel=INFO"
   db:
     build:
       context: .
@@ -59,7 +61,20 @@ services:
       - "6379:6379"
     networks:
       - djangonetwork
-  
+  tensorflowserving:
+    image: cedricbl/tf-serving-universal-amd64
+    platform: linux/amd64
+    volumes:
+      - type: bind
+        source: ./LSTM
+        target: /models/LSTM
+    environment:
+      - MODEL_NAME=LSTM
+    networks:
+      - djangonetwork
+    ports:
+      - "8501:8501"
+
 networks:
   djangonetwork:
     driver: bridge

@@ -23,10 +23,18 @@ TENSER_SERVING_IMGCLASS_URL = "http://mooddecider.com:8501/v1/models/IMGCLASS:pr
 @shared_task
 def trigger(user, site):
     text_mood, image_mood = get_mood(site.url)
-    qs = Result.objects.get(url=site, user=user)
-    qs.status = "completion"
-    qs.mood = text_mood + image_mood
-    qs.save()
+    result = Result.objects.get(url=site, user=user)
+    result.status = "completion"
+    if text_mood != "" and image_mood != "":  # image_mood , text_mood 값이 모두 존재할 경우
+        result.text_mood = text_mood
+        result.image_mood = image_mood
+    elif text_mood == "" and image_mood == "":  # image_mood, text_mood 값이 모두 없을 경우
+        result.status = "failure"
+    elif text_mood != "":  # text_mood 값이 있을 경우
+        result.text_mood = text_mood
+    else:
+        result.image_mood = image_mood
+    result.save()
 
 
 @shared_task
@@ -82,33 +90,40 @@ def get_mood(url):
 @shared_task
 def crawl(url: str):
     image_list = []
-    html = urlopen(url).read()
-    soup = BeautifulSoup(html, "html.parser")
-    text_list = soup.get_text()
+    text_list = []
 
-    images = soup.find_all("img")
+    try:
+        html = urlopen(url).read()
+        soup = BeautifulSoup(html, "html.parser")
+        text_list = soup.get_text()
 
-    for i, img in enumerate(images):
-        src = img.get("src")
-        # print(src)
-        if src == None:
-            continue
-        if not src.startswith("http"):
-            continue
-        if src.endswith(".svg") or ".gif" in src:
-            continue
+        images = soup.find_all("img")
 
-        result = requests.get(src)
+        for image in images:
+            src = image.get("src")
 
-        img = Image.open(BytesIO(result.content))
-        img = img.convert("RGB")
-        img = img.resize((64, 64))
-        data = np.asarray(img)
-        data = np.array(data)
-        data = data.astype("float") / 256
-        data = data.reshape(-1, 64, 64, 3)
+            if src == None:
+                continue
+            if not src.startswith("http"):
+                continue
+            if src.endswith(".svg") or ".gif" in src:
+                continue
 
-        image_list.append(data)
+            result = requests.get(src)
+
+            byte_image = Image.open(BytesIO(result.content))
+            byte_image = byte_image.convert("RGB")
+            byte_image = byte_image.resize((64, 64))
+
+            data = np.asarray(byte_image)
+            data = np.array(data)
+            data = data.astype("float") / 256
+            data = data.reshape(-1, 64, 64, 3)
+
+            image_list.append(data)
+
+    except Exception as e:
+        print(e)
 
     return text_list, image_list
 

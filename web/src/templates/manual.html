@@ -88,7 +88,7 @@
             </div>
         </div>
     </section>
-
+    <hr>
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -112,9 +112,10 @@
                         바로하기</a>
                     {% else %}
                     <p class="text-warning"> URL분석 서비스는 로그인 후 이용 가능합니다.</p>
-                    <a class="btn btn-lg btn-block btn-primary m-2" href="/accounts/signup/" style="float:right;">Mood
+                    {% comment %} <a class="btn btn-lg btn-block btn-primary m-2" href="/accounts/signup/"
+                        style="float:right;">Mood
                         Decider 회원가입
-                        바로하기</a>
+                        바로하기</a> {% endcomment %}
                     <a class="btn btn-lg btn-block btn-primary m-2 " href="/accounts/login/" style="float:right;">Mood
                         Decider 로그인
                         바로하기</a>
@@ -123,11 +124,11 @@
             </div>
         </div>
     </section>
-
+    <hr>
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4 col-md-auto col-sm-auto border border-dark" style="height: 150px;">
+                <div class="col-12 col-lg-4 col-md-auto col-sm-auto border border-dark" style="height: 25vh;">
                     <img class="img-fluid mt-2" src="{% static "listImg.png"%}" alt="listImage">
                     {% comment %} <h2 class="text-center text-primary">03. Mood분석결과리스트 {% endcomment %}
                     </h2>
@@ -146,9 +147,10 @@
                         바로보기</a>
                     {% else %}
                     <p class="text-warning"> URL분석 서비스는 로그인 후 이용 가능합니다.</p>
-                    <a class="btn btn-lg btn-block btn-primary m-2" href="/accounts/signup/" style="float:right;">Mood
+                    {% comment %} <a class="btn btn-lg btn-block btn-primary m-2" href="/accounts/signup/"
+                        style="float:right;">Mood
                         Decider 회원가입
-                        바로하기</a>
+                        바로하기</a> {% endcomment %}
                     <a class="btn btn-lg btn-block btn-primary m-2 " href="/accounts/login/" style="float:right;">Mood
                         Decider 로그인
                         바로하기</a>

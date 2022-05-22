@@ -19,12 +19,14 @@
           <li class="nav-item me-4">
             <a class="nav-link" href="/manual/">이용방법</a>
           </li>
+          {% if request.user.is_authenticated %}
           <li class="nav-item me-4">
             <a class="nav-link" href="/mood/search/{{ request.user.id }}/">Mood 검색</a>
           </li>
           <li class="nav-item me-4">
             <a class="nav-link" href="/mood/result/{{ request.user.id }}/">검색결과리스트</a>
           </li>
+          {% endif %}
         </ul>
         <div class="ms-auto">
           {% if not request.user.is_authenticated %}
@@ -57,12 +59,14 @@
             <li class="nav-item">
               <a class="nav-link" href="/manual/">이용방법</a>
             </li>
+            {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="/mood/search/{{ request.user.id }}">Mood 검색</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/mood/result/{{ request.user.id }}">검색결과리스트</a>
             </li>
+            {% endif %}
           </ul>
           <div class="border-top pt-4 mb-5">
             {% if not request.user.is_authenticated %}

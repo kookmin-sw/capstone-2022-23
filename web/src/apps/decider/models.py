@@ -3,6 +3,7 @@ from model_utils.fields import StatusField
 from model_utils import Choices
 from django.conf import settings
 
+
 class TimestampedModel(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -20,17 +21,23 @@ class TimestampedModel(models.Model):
     class Meta:
         abstract = True
 
+
 class Site(TimestampedModel):
-    url = models.URLField(db_column="URL",
+    url = models.URLField(
+        db_column="URL",
         max_length=2200,
         verbose_name="URL",
-        help_text="The value is the address of the page the user wants to analyze the mood(atmosphere).",)
-    user = models.ManyToManyField( settings.AUTH_USER_MODEL, through="Result" )
-    mood = models.CharField(db_column="mood", max_length=50, null=True)
+        help_text="The value is the address of the page the user wants to analyze the mood(atmosphere).",
+    )
+    user = models.ManyToManyField(settings.AUTH_USER_MODEL, through="Result")
+    text_mood = models.CharField(db_column="text_mood", max_length=50, null=True)
+    image_mood = models.CharField(db_column="image_mood", max_length=50, null=True)
+
     def __str__(self):
         return self.url
 
-class Result(TimestampedModel):
+
+class Result(models.Model):
     STATUS = Choices("ongoing", "completion", "failure")
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -51,8 +58,30 @@ class Result(TimestampedModel):
         verbose_name="분석상태",
         help_text="The value is an analysis status value, which includes ongoing, failure, completion.",
     )
-    mood = models.CharField(db_column="mood", max_length=50, default="",)
-    
+    text_mood = models.CharField(
+        db_column="text_mood",
+        max_length=50,
+        default="",
+    )
+
+    image_mood = models.CharField(
+        db_column="image_mood",
+        max_length=50,
+        default="",
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        db_column="CRE_DT",
+        verbose_name="생성시간",
+        help_text="The value is automatically entered when the table is created.",
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        db_column="UPD_DT",
+        verbose_name="갱신시간",
+        help_text="The value is automatically entered when the table is updated.",
+    )
+
     class Meta:
         db_table = "Result"
         verbose_name = "result"
@@ -66,10 +95,13 @@ class Result(TimestampedModel):
         ]
 
     def __str__(self):
-        return "url: %s의 분석 결과" % (self.url)
+        return "url: %s의 분석 결과, 생성시간: %s" % (self.url, self.created_at)
 
     def get_absolute_url(self):
         return reverse("result", kwargs={"pk": self.pk})
+
+    def get_created_at(self):
+        return self.created_at
 
 
 # class History(TimestampedModel):

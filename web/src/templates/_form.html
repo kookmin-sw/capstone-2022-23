@@ -16,7 +16,7 @@
                         </a>
                         <form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <input type="hidden" name="next" value={{ request.GET.next }} />
+                            <input type="hidden" name="next" value="/mood/search/" />
                             <div class="card mb-3">
                                 <div class="card-body">
                                     {% bootstrap_form form %}

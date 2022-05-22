@@ -3,25 +3,33 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="bg-white px-4 py-3 rounded shadow-sm">
-      <table class="table table-responsive">
+      <table id="table" class="table table-responsive">
         <thead>
           <tr>
-            <th>순번</th>
-            <th>날짜</th>
-            <th>URL</th>
-            <th>Status</th>
-            <th>결과</th>
+            <th width="5%">순번</th>
+            <th width="10%">날짜</th>
+            <th width="58%" style="word-break:break-all">URL</th>
+            <th width="5%">Status</th>
+            <th width="10%">Mood</th>
+            <th width="10%"> </th>
           </tr>
         </thead>
         <tbody>
           {% if result_list %}
-          {% for result in result_list %}
+          {% for result, converted_time in result_list%}
           <tr>
-            <td>{{ forloop.counter}}</td>
-            <td>{{ result.created_at }}</td>
-            <td>{{ result.url }}</td>
-            <td>{{ result.status }}</td>
-            <td>{{ result.mood }}</td>
+            <td width="5%">{{ forloop.counter}}</td>
+            <td width="10%">{{ converted_time}}</td>
+            <td width="58%" style="word-break:break-all"><a href="{{ result.url }}" target="_blank">
+                {{result.url}}</a></td>
+            <td width="10%">{{ result.status }}</td>
+            <td width="5%">
+              <p>텍스트 <span class="text-success"> {{ result.text_mood }}</span> <br>이미지
+                <span class="text-success"> {{ result.image_mood }} </span>
+              </p>
+            </td>
+            <td width="10%"><button class="btn btn-danger m-1" onclick="">기록 제거</button>
+              </th>
           </tr>
           {% endfor %}
           {% else %}

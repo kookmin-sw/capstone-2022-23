@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+{% load static %}
 <section class="py-5 overflow-hidden">
 
   <div class="container py-5">
@@ -12,11 +13,16 @@
         <p class="text">guest님, 안녕하세요😄<br><br>intro와 manual은 서비스 이용에 도움이 됩니다.</p><br>
         <h6>서비스는 회원 가입 후 이용 가능합니다.</h6>
         {% endif %}
-        <img class="position-relative mx-auto rounded w-100" style="z-index:10"
-          src="https://images.unsplash.com/photo-1536940135352-b4b3875df888?ixlib=rb-1.2.1&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1050&amp;amp;h=1050&amp;amp;q=80"
-          alt="">
+        <table>
+          <tr>
+            <td><img class="position-relative mx-auto rounded " style="z-index:10" src="{% static "indexImg.jpg" %}"
+                alt="indexImage" height="400"></td>
+            <td> <img class="position-relative mx-auto rounded " style="z-index:10" src="{% static "indexImg2.jpg" %}"
+                alt="indexImage" height="400"> </td>
+          </tr>
+        </table>
       </div>
-      <div class="col-12 col-lg-6 py-5">
+      <div class=" col-12 col-lg-6 py-5">
 
         <div class="row">
           <div class="col-12 col-lg-8 mx-auto">

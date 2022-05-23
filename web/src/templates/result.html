@@ -14,9 +14,9 @@
           <tr>
             <th width="5%">순번</th>
             <th width="10%">날짜</th>
-            <th width="58%" style="word-break:break-all">URL</th>
-            <th width="5%">Status</th>
-            <th width="10%">Mood</th>
+            <th width="45%" style="word-break:break-all">URL</th>
+            <th width="10%">Status</th>
+            <th width="15%">Mood</th>
             <th width="10%"> </th>
           </tr>
         </thead>
@@ -26,10 +26,10 @@
           <tr>
             <td width="5%">{{ forloop.counter}}</td>
             <td width="10%">{{ converted_time}}</td>
-            <td width="58%" style="word-break:break-all"><a href="{{ result.url }}" target="_blank">
+            <td width="45%" style="word-break:break-all"><a href="{{ result.url }}" target="_blank">
                 {{result.url}}</a></td>
             <td width="10%">{{ result.status }}</td>
-            <td width="5%">
+            <td width="15%">
               <p>텍스트 <span class="text-success"> {{ result.text_mood }}</span> <br>이미지
                 <span class="text-success"> {{ result.image_mood }} </span>
               </p>

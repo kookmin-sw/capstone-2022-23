@@ -46,6 +46,7 @@ def get_mood_from_text(text_list):
     try:
         tokens, tokenizer = get_tokenized(text_list)
         top_three = [0 for _ in range(13)]
+        top_three_index = [] 
 
         for token in tokens:
             sequences = tokenizer.texts_to_sequences([token])
@@ -77,8 +78,16 @@ def get_mood_from_text(text_list):
 
             for prediction in predictions:
                 top_three[np.argmax(prediction)] += 1
-
-        text_mood = emotions[np.argmax(top_three)]
+                
+        for i, top_emotion in enumerate(top_three):
+            top_three_index.append((i,top_emotion))
+            
+        top_three_index.sort(key = lambda x: -x[1])
+            
+            
+        # text_mood = emotions[np.argmax(top_three)]
+        text_mood = emotions[top_three_index[0][0]] + " " + emotions[top_three_index[1][0]] + " " + emotions[top_three_index[2][0]] 
+        
         return text_mood
     except Exception as e:
         print(e)

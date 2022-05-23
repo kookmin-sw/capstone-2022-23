@@ -30,6 +30,8 @@ def trigger(user, site):
         result.image_mood = image_mood
     elif text_mood == None and image_mood == None:  # image_mood, text_mood 값이 모두 없을 경우
         result.status = "failure"
+        result.text_mood = "없음"
+        result.image_mood = "없음"
     elif text_mood != None:  # text_mood 값이 있을 경우
         result.text_mood = text_mood
         result.image_mood = "분석 실패"
@@ -138,6 +140,9 @@ def get_mood_from_image(image_list):
         categories = ["anger", "fear", "joy", "love", "sadness", "surprise"]
         result_list = [0, 0, 0, 0, 0, 0]
 
+        if not image_list:
+            raise Excepetion
+
         for img in image_list:
             data = json.dumps({"instances": img.tolist()})
 
@@ -150,6 +155,7 @@ def get_mood_from_image(image_list):
 
         image_mood = categories[np.argmax(result_list)]
         return image_mood
+    
     except Exception as e:
         print(e)
 

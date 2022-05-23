@@ -34,13 +34,15 @@
     <script>
         function handleClick() {
             var imgDiv = document.getElementById("myImg");
+            var btn = document.getElementById("myBtn");
+
             if (imgDiv != null && imgDiv != "") {
                 imgDiv.style.display = "block";
+
             } else {
-                alert("안됨");
+                alert("");
             }
-            var btn = document.getElementById("myBtn");
-            btn.disabled = true;
+
         }
 
         function delete_result(result_id) {

@@ -10,6 +10,9 @@ import time, math, datetime
 def mood_search(request, pk):
     if request.method == "POST":
         url = request.POST["input_url"]
+        if not (url.startswith('http') or url.startswith('https')) and not url.endswith('/'):
+            url = "https://" + url +'/'
+            
         user = request.user
 
         site = Site(url=url)
@@ -72,10 +75,10 @@ def convert_time(result_time_list):
     now_fd = []  # 계산된 시간 저장 리스트
     for result_time in result_time_list:
         millis = int(round(time.time()))
-        me_time = (millis - (result_time / 1000)) / 60
-        me_timehour = math.floor((me_time / 60))
-        me_timeday = math.floor((me_timehour / 24))
-        me_timeyear = math.floor(me_timeday / 365)
+        me_time = int((millis - (result_time / 1000)) / 60)
+        me_timehour = int((me_time / 60))
+        me_timeday = int((me_timehour / 24))
+        me_timeyear = int(me_timeday / 365)
 
         if me_time < 1:
             now_fd.append("방금전")

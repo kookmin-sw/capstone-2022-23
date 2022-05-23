@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from . import tasks
 from .models import Site, Result
@@ -45,20 +45,25 @@ def mood_result(request, pk):
         )
     else:
         return render(request, "intro.html")
+    
+def delete_result(request, pk):
+    result = get_object_or_404(Result, id=pk)
+    result.delete()
+    return redirect('/mood/result/'+ str(request.user.id) )
+    
 
+# def test(request):
+#     if request.method == "POST":
+#         url = request.POST["input_url"]
+#         user = request.user
 
-def test(request):
-    if request.method == "POST":
-        url = request.POST["input_url"]
-        user = request.user
+#         site = Site(url=url)
+#         site.save()
 
-        site = Site(url=url)
-        site.save()
+#         Result.objects.create(url=site, user=user)
+#         tasks.trigger(user, site)
 
-        Result.objects.create(url=site, user=user)
-        tasks.trigger(user, site)
-
-        return render(request, "test.html")
+#         return render(request, "test.html")
 
 
 def convert_time(result_time_list):

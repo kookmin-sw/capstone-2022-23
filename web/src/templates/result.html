@@ -28,7 +28,7 @@
                 <span class="text-success"> {{ result.image_mood }} </span>
               </p>
             </td>
-            <td width="10%"><button class="btn btn-danger m-1" onclick="">기록 제거</button>
+            <td width="10%"><button class="btn btn-danger m-1" onclick="delete_result('{{ result.pk }}')">기록 제거</button>
               </th>
           </tr>
           {% endfor %}

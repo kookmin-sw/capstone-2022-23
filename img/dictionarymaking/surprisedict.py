@@ -14,7 +14,7 @@ di = dict()
 #16가지 색상
 psycolors = [[255,0,0], [255,165,0], [255,255,0], [0,128,0], [0,0,255], [75,0,130], [128,0,128], [64,224,208], [255,192,203], [255,0,255], [165,42,42], [128,128,128], [192,192,192], [255,215,0], [255,255,255], [0,0,0]]
 
-dir = "C:/Users/iyb21/OneDrive/문서/GitHub/capstone-2022-23/img/emotion6/anger/"
+dir = "D:/capstone-2022-23/img/emotion6/surprise/"
 for i in os.listdir(dir):
     path = dir + i
     print(path)
@@ -29,6 +29,7 @@ for i in os.listdir(dir):
     counts = collections.Counter(map(tuple, data))
 
     combi = [counts.most_common(2)[0][0], counts.most_common(2)[1][0]]
+    print(combi)
 
     for i in range(2):
         min = 999999
@@ -37,7 +38,7 @@ for i in os.listdir(dir):
             if md < min:
                 min = md
                 temp = psycolors[j]
-            combi[i] = tuple(temp)
+        combi[i] = tuple(temp)
 
     combi = tuple(combi)
     print(combi)
@@ -49,5 +50,5 @@ for i in os.listdir(dir):
 
     print(di)
 
-with open('angry_dict.pkl','wb') as f:
-    pickle.dump(angry_dict,f)
+with open('surprise_dict.pkl','wb') as f:
+    pickle.dump(di,f)

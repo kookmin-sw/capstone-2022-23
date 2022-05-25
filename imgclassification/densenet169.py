@@ -2,7 +2,7 @@ from keras.models import Sequential
 from keras.layers import MaxPooling2D
 from keras.layers import Conv2D
 from keras.layers import Activation, Dropout, Flatten, Dense
-from keras.applications.resnet import ResNet101
+from keras.applications.densenet import DenseNet169
 import numpy as np
 import os
 from PIL import Image
@@ -21,11 +21,11 @@ X_test  = X_test.astype("float")  / 256
 print('X_train shape:', X_train.shape)
 print('X_test shape:', X_test.shape)
 
-resNet101 = ResNet101(weights="imagenet", include_top=False, input_shape=(64, 64, 3))
+denseNet169 = DenseNet169(weights="imagenet", include_top=False, input_shape=(64, 64, 3))
 
 # 모델 구조 정의 
 model = Sequential()
-model.add(resNet101)
+model.add(denseNet169)
 # 전결합층
 model.add(Flatten())    # 벡터형태로 reshape
 
@@ -39,7 +39,7 @@ model.compile(loss='categorical_crossentropy',   # 최적화 함수 지정
 #print(model.summary())
 
 # 학습 완료된 모델 저장
-hdf5_file = "./resnet101-model.hdf5"
+hdf5_file = "./DenseNet169-model.hdf5"
 if os.path.exists(hdf5_file):
     # 기존에 학습된 모델 불러들이기
     model.load_weights(hdf5_file)

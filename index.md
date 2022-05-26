@@ -35,11 +35,11 @@
 
 <img src="./docs/img//login.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//mdtech.png" width="1400px" height="9000px"  >
+<img src="./docs/img//mdtech.png" width="1400px" height="3000px"  >
 
 <img src="./docs/img//manual.png" width="1400px" height="2400px"  >
 
-<img src="./docs/img//search.png" width="1400px" height="500px"  >
+<img src="./docs/img//search.png" width="1400px" height="300px"  >
 
 <img src="./docs/img//result.png" width="1400px" height="2200px"  >
 

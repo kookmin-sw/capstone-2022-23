@@ -35,9 +35,9 @@
 
 <img src="./docs/img//login.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//mdtech.png" width="1400px" height="4500px"  >
+<img src="./docs/img//mdtech.png" width="1400px" height="7500px"  >
 
-<img src="./docs/img//manual.png" width="1400px" height=2400px"  >
+<img src="./docs/img//manual.png" width="1400px" height="2400px"  >
 
 <img src="./docs/img//search.png" width="1400px" height="900px"  >
 

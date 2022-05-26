@@ -39,7 +39,7 @@
 
 <img src="./docs/img//manual.png" width="1400px" height="2400px"  >
 
-<img src="./docs/img//search.png" width="1400px" height="900px"  >
+<img src="./docs/img//search.png" width="1400px" height="500px"  >
 
 <img src="./docs/img//result.png" width="1400px" height="2200px"  >
 
@@ -54,7 +54,7 @@
 
 ## 3. 팀 소개
 
-<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
+<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="240px">
 
 ```
 🧑🏻‍💻 Name: 정태원
@@ -64,12 +64,13 @@
     👉🏻 팀장(인적자원관리)
     👉🏻 AI(텍스트 분석 파트)
     👉🏻 데이터 셋 구축 및 모델 학습
+    👉🏻 AWS EC2, AWS S3 설정
 
 
 ```
 
 <br/>
-<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="240px">
 
 ```
 👨🏻‍💻 Name: 임용빈
@@ -79,11 +80,12 @@
     👉🏻 AI(이미지 분석 파트)
     👉🏻 데이터 셋 구축 및 모델 학습
     👉🏻 모델 성능 향상
+    👉🏻 AWS EC2, AWS S3 설정
 
 
 ```
 
-<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="260px">
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="230px">
 
 ```
 👩🏻‍💻 Name: 오수연
@@ -93,6 +95,7 @@
     👉🏻 Frontend
     👉🏻 Backend
     👉🏻 UI/UX 설계
+    👉🏻 AWS EC2, AWS S3 설정
 
 
 ```

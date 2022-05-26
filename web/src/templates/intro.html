@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<div>
+  <section class="py-5">
+    <div class="container">
+      <div class="position-relative py-5">
+        <div class="position-absolute" style="top: 0; left: 0;">
+          <img class="img-fluid" src="" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-7 py-5 mx-auto text-center">
+            <h2 class="mb-3 fs-1 fw-bold">
+              <span>분위기</span>
+              <span class="text-muted">분석 서비스</span>
+              <span class="text-primary">Mood Decider.</span>
+            </h2>
+            <p class="text-muted">The Mood Decider is a mood analysis service.</p>
+          </div>
+        </div>
+        <div class="position-absolute" style="bottom: 0; right: 0;">
+          <img class="img-fluid" src="" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="py-5">
+    <div class="container overflow-hidden">
+      <div class="row mb-5 pb-4">
+        <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+          <div class="position-relative p-5" style="height: 500px;">
+            <div class="position-absolute top-0 start-0 h-100 w-100 bg-light rounded mt-3 ms-3"></div>
+            <img class="position-absolute top-0 start-0 h-100 w-100 rounded" style="object-fit: cover;"
+              src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
+              alt="">
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex">
+          <div class="px-lg-5 my-auto">
+            <img class="img-fluid" src="" alt="">
+            <h2 class="my-4 fs-2 lh-base fw-bold">저희는 매일 다른 감정을 기록하는<br>
+              블로거들의 글을 좀 더 몰입할 수 있도록<br>
+              음악을 선정할 때 도움을 주는 분위기를<br>
+              추천합니다.</h2>
+            <h5 class="mb-1 fs-5">capstone2022-23</h5>
+            <p class="mb-0 text-primary">Mood Decider팀</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="py-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 col-lg-5 mx-auto text-center">
+          <h2 class="fs-1 fw-bold">기술</h2>
+          <p class="text-muted lh-lg">Mood Decider의 주요 기술입니다</p>
+        </div>
+      </div>
+      <div class="row mb-20">
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          {% comment %} <img class="mb-3 img-fluid" style="max-width: 90px;" src="" alt=""> {% endcomment %}
+          <div class="d-inline-block py-2 px-3  bg-light rounded-circle fw-bold">1</div>
+          <h4 class="fw-bold"><a style="color: #ff6b81;" href="#01"><br> LSTM 모델</a></h4>
+          <span class="text-secondary"> 텍스트 분석</span>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <div class="d-inline-block py-2 px-3  bg-light rounded-circle fw-bold">2</div>
+          <h4 class="fw-bold"><a style="color: #ff6b81;" href="#02"><br>CNN 모델</a></h4>
+          <span class="text-secondary"> 이미지 분석</span>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <div class="d-inline-block py-2 px-3  bg-light rounded-circle fw-bold">3
+          </div>
+          <h4 class="fw-bold"><a style="color: #ff6b81;" href="#03"><br>PostgreSQL</a></h4>
+          <span class="text-secondary"> URL 분석 결과 저장</span>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <div class="d-inline-block py-2 px-3  bg-light rounded-circle fw-bold">4</div>
+          <h4 class="fw-bold"><a style="color: #ff6b81;" href="#04"><br>Tensorflow-Serving<br>& Celery</a></h4>
+          <span class="text-secondary"> 분석 처리 시간 단축 </span>
+        </div>
+        {% comment %} <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <img class="mb-3 img-fluid" style="max-width: 90px;" src="" alt="">
+          <h4 class="fw-bold">5번</h4>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <img class="mb-3 img-fluid" style="max-width: 90px;" src="" alt="">
+          <h4 class="fw-bold">6번</h4>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <img class="mb-3 img-fluid" style="max-width: 90px;" src="" alt="">
+          <h4 class="fw-bold">7번</h4>
+        </div>
+        <div class="col-6 p-3 col-lg-3 mb-4 text-center">
+          <img class="mb-3 img-fluid" style="max-width: 90px;" src="" alt="">
+          <h4 class="fw-bold">8번</h4>
+        </div> {% endcomment %}
+      </div>
+      <hr>
+      <div class="row mb-5">
+        <div class="col-12">
+          {% comment %} <h4 class="fs-6 fw-bold">LSTM 모델</h4> {% endcomment %}
+          <h4 id="01">1. LSTM 모델 </h4>
+          <div>
+            <p class=" lh-lg text-center">
+              <b>LSTM 모델</b>을 사용한 <b>텍스트 분석 과정</b><br>
+              <img class="mb-3 img-fluid" style="max-width: 70vw;" src="{% static "LSTM1.png" %}" alt="LSTM
+              description">
+              <br><br>각 <b>과정</b>에 대한 <b>설명</b><br>
+              <img class="mb-3 img-fluid" style="max-width: 70vw;" src="{% static "LSTM2.png" %}" alt="LSTM
+                description" />
+
+              <span class="text-muted">RNN의 장기의존성 문제를 해결한 LSTM 모델을 활용하여 문장의 길이와 상관없이 글의 순서를 고려하기 때문에 문맥을 명확하게 파악 가능
+              </span> </p>
+          </div> <br><br><br><br>
+
+          <h4 id="02">2. CNN 모델 </h4>
+          <div>
+            <p class="lh-lg text-center">
+              <b>CNN 모델</b>을 사용한 <b>이미지 분석 과정</b><br>
+              <img class="mb-3 img-fluid" style="max-width: 70vw;" src="{% static "CNN.png" %}" alt="LSTM
+                  
+              description" />
+              <span class="text-muted">
+                이미지의 RGB값에 K-means clustering 을 사용하여 이미지를 대표하는 색을 뽑아내고<br>
+                각 감성 클래스 별 해당 색깔이 나올 확률을 가중치 식으로 변형 후<br>
+                CNN모델의 최종 레이어에 적용.<br><br>
+                Datatset은 6가지 감정으로 분류한 Emotion6 / 8가지 감정으로 분류한 Artphoto를 이용 <br><br><br></span>
+
+              <h5><b>CNN</b>을 활용한 딥러닝의 <b>장점</b><br></h5>
+              - 고차원의 컬러 영상의 저차원으로 줄여야 함<br>
+              - 저차원으로 줄임에도 불구하고 의미있는 특징에 대하여 강조<br>
+              - 의미있는 특징에 대하여 사용자의 의견이나 판단이 들어가지 않도록 함<br>
+              - 영상과 같이 고차원의 데이터이지만 많은 데이터가 redundant한 데이터가 많이 섞여 있는 상황에 효율적<br>
+            </p>
+          </div>
+          <br><br><br>
+
+          <h4 id="03">3. PostgreSQL </h4>
+          <div>
+            <p class="lh-lg text-center">
+              {% comment %} <b>PostgreSQL</b>을 사용한 <b>데이터 저장 과정</b><br> {% endcomment %}
+              {% comment %} <b>PostgreSQL</b>를 사용하여 사용자가 입력한 URL분석 결과인 <b>Mood를 저장</b>하여 사용자가 언제든지 이전 분석 기록을 확인할 수 있도록
+              <b>분석 결과 리스트 {% endcomment %}
+                <br><b>분석 결과 리스트 제공</b><br>
+                <span class="text-muted">
+                  <b>PostgreSQL</b>를 사용하여 사용자가 입력한 URL분석 결과인 <b>Mood를 저장</b>하여<br> 사용자가 언제든지 이전 분석 기록을 확인할 수 있도록
+                  <b>분석 결과 리스트</b>를 <b>제공</b><br><br><br></span>
+
+                <h5><b>PostgreSQL</b>을 사용한 <b>이유</b><br></h5>
+                - URL과 같은 복잡한 데이터를 저장하기 위해 객체 접근 방식을 이용하는 객체 관계형 데이터베이스 필요<br>
+                - 음악 추천 등 기능 확장 시 높은 확장성을 가진 객체 관계형 데이터베이스 필요<br>
+            </p>
+          </div>
+          <br><br><br>
+          <h4 id="04">4. Tensorflow-Serving and Celery </h4>
+          <div>
+            <p class="lh-lg text-center">
+              {% comment %} <b>PostgreSQL</b>을 사용한 <b>데이터 저장 과정</b><br> {% endcomment %}
+              {% comment %} <b>PostgreSQL</b>를 사용하여 사용자가 입력한 URL분석 결과인 <b>Mood를 저장</b>하여 사용자가 언제든지 이전 분석 기록을 확인할 수 있도록
+              <b>분석 결과 리스트 {% endcomment %}
+                <br><b>What is Tensorflow-Serving and Celery?</b><br>
+                <span class="text-muted">
+                  Tensorflow-serving<br>
+                  다른 애플리케이션에서 Machine Learning Model을 사용할 수 있도록<br>
+                  모델을 배포하거나, 모델 API를 제공하는 시스템<br><br>
+
+                  celery<br>
+                  메시지 브로커(message broker: redis)와 python 작업 프로세스를 연결하여<br>
+                  비동기 작업을 수행할 수 있는 시스템을
+                  제공하는 분산 처리 메시지 큐(Message Queue)<br><br><br></span>
+                <br><br><br></span>
+
+
+                <h5><b>Tensorflow-Serving</b>을 사용한 <b>이유</b><br></h5>
+                - TensorFlow Serving을 사용하면 동일한 서버 아키텍처와 API를 유지하면서 새로운 알고리즘과 실험을 쉽게 배포 할 수 있음<br>
+                - 다른 유형의 모델 및 데이터를 쉽게 확장 가능 <br><br><br>
+
+                <h5><b>Celery</b>을 사용한 <b>이유</b><br></h5>
+                - python에서 가장 많이 쓰이는 웹 프레임워크인 Django과 연동하는 기능을 공식적으로 지원<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

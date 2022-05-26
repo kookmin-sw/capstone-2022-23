@@ -22,7 +22,7 @@ images = soup.find_all('img')
         
 for i, img in enumerate(images):
     src = img.get('src')
-    print(src)
+    #print(src)
     if src == None:
         continue
     if not src.startswith('http'):
@@ -40,7 +40,7 @@ for i, img in enumerate(images):
     X = X.astype("float") / 256
     X = X.reshape(-1, 64, 64,3)
 
-    address = 'http://mooddecider.com:8501/v1/models/IMGCLASS:predict'
+    address = 'http://localhost:8501/v1/models/IMGCLASS:predict'
     data = json.dumps({'instances':X.tolist()})
     print(X.tolist()[0][0][0][:10])
     

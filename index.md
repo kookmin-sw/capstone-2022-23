@@ -31,17 +31,17 @@
 <img src="./docs/img/design04.png" width="900px" height="600px"  >
 
 #### 👉🏻 UI구현화면
-<img src="./docs/img//signup.png" width="1200px" height="600px"  >
+<img src="./docs/img//signup.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//login.png" width="1200px" height="600px"  >
+<img src="./docs/img//login.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//mdtech.png" width="1200px" height="3800px"  >
+<img src="./docs/img//mdtech.png" width="1400px" height="4500px"  >
 
-<img src="./docs/img//manual.png" width="1200px" height="2000px"  >
+<img src="./docs/img//manual.png" width="1400px" height=2400px"  >
 
-<img src="./docs/img//search.png" width="1200px" height="900px"  >
+<img src="./docs/img//search.png" width="1400px" height="900px"  >
 
-<img src="./docs/img//result.png" width="1200px" height="1800px"  >
+<img src="./docs/img//result.png" width="1400px" height="2200px"  >
 
 
 ## 2. 소개 영상
@@ -83,7 +83,7 @@
 
 ```
 
-<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="240px">
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="260px">
 
 ```
 👩🏻‍💻 Name: 오수연

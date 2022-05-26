@@ -31,17 +31,17 @@
 <img src="./docs/img/design04.png" width="900px" height="600px"  >
 
 #### 👉🏻 UI구현화면
-<img src="./docs/img//signup.png" width="1400px" height="600px"  >
+<img src="./docs/img//signup.png" width="900px" height="600px"  >
 
-<img src="./docs/img//login.png" width="1400px" height="600px"  >
+<img src="./docs/img//login.png" width="900px" height="600px"  >
 
-<img src="./docs/img//mdtech.png" width="1400px" height="1200px"  >
+<img src="./docs/img//mdtech.png" width="900px" height="1200px"  >
 
-<img src="./docs/img//manual.png" width="1400px" height="1200px"  >
+<img src="./docs/img//manual.png" width="900px" height="1200px"  >
 
-<img src="./docs/img//search.png" width="1400px" height="300px"  >
+<img src="./docs/img//search.png" width="900px" height="300px"  >
 
-<img src="./docs/img//result.png" width="1400px" height="1200px"  >
+<img src="./docs/img//result.png" width="900px" height="1200px"  >
 
 
 ## 2. 소개 영상

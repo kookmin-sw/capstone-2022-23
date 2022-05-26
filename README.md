@@ -30,15 +30,27 @@
 
 <img src="./docs/img/design04.png" width="900px" height="600px"  >
 
-#### 👉🏻 Diagram
+#### 👉🏻 UI구현화면
+<img src="./docs/img//signup.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//usecase.png" width="800px" height="600px"  >
+<img src="./docs/img//login.png" width="1400px" height="600px"  >
 
-<img src="./docs/img//activity.png" width="600px" height="600px" >
+<img src="./docs/img//mdtech.png" width="1400px" height="9000px"  >
+
+<img src="./docs/img//manual.png" width="1400px" height="2400px"  >
+
+<img src="./docs/img//search.png" width="1400px" height="900px"  >
+
+<img src="./docs/img//result.png" width="1400px" height="2200px"  >
+
 
 ## 2. 소개 영상
 
+### 2-1. 중간 발표 소개 영상
 [![Mood Decider](https://img.youtube.com/vi/DZUP4tkgEfk/0.jpg)](https://www.youtube.com/watch?v=DZUP4tkgEfk)
+### 2-2. 시연 영상
+[![Mood Decider](https://img.youtube.com/vi/CnEgGZ-wjtc/0.jpg)](https://youtu.be/CnEgGZ-wjtc)
+
 
 ## 3. 팀 소개
 
@@ -51,7 +63,6 @@
 🔥 Role
     👉🏻 팀장(인적자원관리)
     👉🏻 AI(텍스트 분석 파트)
-    👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
 
 
@@ -66,15 +77,13 @@
 📧 Email: iyb211@kookmin.ac.kr
 🔥 Role
     👉🏻 AI(이미지 분석 파트)
-    👉🏻 Backend
     👉🏻 데이터 셋 구축 및 모델 학습
     👉🏻 모델 성능 향상
 
 
 ```
 
-<br/>
-<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="250px">
+<img src="./docs/img/sooyeon.jpg" align="left" width="220px" height="260px">
 
 ```
 👩🏻‍💻 Name: 오수연
@@ -84,17 +93,31 @@
     👉🏻 Frontend
     👉🏻 Backend
     👉🏻 UI/UX 설계
-    👉🏻 프로젝트 문서 관리
 
 
 ```
 
-</br>
-
 ## 4. 사용법
-
-추후 작성 예정입니다.
+```
+1)	http://mooddecider.com에 접속합니다.
+2)	회원가입
+    A.	상단의 회원가입 버튼 혹은 이용 방법 페이지에 있는 회원가입 바로하기 버튼을 클릭하여 회원가입 페이지로 이동합니다.
+    B.	사용하고자 하는 유저네임(Username), 이름(Name), 이메일(Email), 비밀번호(Password)를 입력합니다. 이 때, 유저네임과 이메일은 이전에 등록되지 않은 값이어야 합니다.
+    C.	가입 완료 버튼을 누르기 전, 이용목적인 Purpose를 꼭 알맞게 선택해주세요.
+    D.	회원 가입을 완료합니다.
+3)	로그인
+    A.	상단의 로그인 버튼 혹은 이용 방법 페이지에 있는 로그인 바로하기 버튼을 클릭하여 로그인 페이지로 이동합니다.
+    B.	이전에 회원가입 시, 생성하였던 유저네임(Username)과 비밀번호(Password)를 입력합니다.
+    C.	로그인을 완료합니다.
+4)	Mood 검색
+    A.	상단의 Mood 검색 혹은 이용 방법 페이지에 있는 Mood 분석 바로가기 버튼을 클릭하여 Mood 분석 페이지로 이동합니다.
+    B.	분석을 원하는 URL을 복사하거나 타이핑하여 안내된 형식에 맞게 입력란에 작성합니다.
+    C.	URL을 정확하게 입력했다면, 분석하기 버튼을 클릭합니다.
+    D.	‘잠시만 기다려주세요’라는 랜딩 이미지(landing image)가 사라질 때까지 조금 기다려줍니다.
+    E.	랜딩 이미지(landing image)가 사라지고, 입력란이 다시 빈 칸이 되면, Mood검색을 완료한 것을 알 수 있습니다.
+5)	Mood 분석 결과 조회
+    A.	메뉴의 검색결과리스트 혹은 이용 방법 페이지에 있는 URL분석결과리스트 바로가기 버튼을 눌러 결과 조회 페이지로 이동합니다.
+    B.	Mood 분석 결과 리스트가 바로 출력되어 URL에 해당하는 분위기를 조회할 수 있습니다.
+```
 
 ## 5. 기타
-
-추후 작성 예정입니다.

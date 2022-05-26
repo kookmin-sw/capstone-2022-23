@@ -39,7 +39,7 @@
 
 <img src="./docs/img//manual.png" width="1400px" height="2400px"  >
 
-<img src="./docs/img//search.png" width="1400px" height="900px"  >
+<img src="./docs/img//search.png" width="1400px" height="500px"  >
 
 <img src="./docs/img//result.png" width="1400px" height="2200px"  >
 
@@ -54,7 +54,7 @@
 
 ## 3. 팀 소개
 
-<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="250px">
+<img src="./docs/img/taewon.jpeg" align="left" width="220px" height="260px">
 
 ```
 🧑🏻‍💻 Name: 정태원
@@ -69,7 +69,7 @@
 ```
 
 <br/>
-<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="250px">
+<img src="./docs/img/yongbin.jpeg" align="left" width="220px" height="260px">
 
 ```
 👨🏻‍💻 Name: 임용빈

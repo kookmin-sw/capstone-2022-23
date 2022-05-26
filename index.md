@@ -39,7 +39,7 @@
 
 <img src="./docs/img//manual.png" width="1400px" height="2400px"  >
 
-<img src="./docs/img//search.png" width="1400px" height="900px"  >
+<img src="./docs/img//search.png" width="1400px" height="500px"  >
 
 <img src="./docs/img//result.png" width="1400px" height="2200px"  >
 

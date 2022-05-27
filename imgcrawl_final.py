@@ -31,7 +31,7 @@ categories = ["anger","fear","joy","love","sadness","surprise"]
 result_list = [0, 0, 0, 0, 0, 0]
 
 #hdr={'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
-url = "https://mygoodplace.tistory.com/58"
+url = "https://mygoodplace.tistory.com/51?category=995448"
 #req=urllib.request.Request(url=url, headers=hdr)
 html_page = urlopen(url).read()
 
@@ -93,12 +93,12 @@ for i, img in enumerate(images):
     for prediction in predictions:
         prediction = np.log(prediction)
 
-        prediction[0] = prediction[0] * np.log(sum(angry_dict.values())/angry_dict[combi])
-        prediction[1] = prediction[1] * np.log(sum(fear_dict.values())/fear_dict[combi])
-        prediction[2] = prediction[2] * np.log(sum(joy_dict.values())/joy_dict[combi])
-        prediction[3] = prediction[3] * np.log(sum(love_dict.values())/love_dict[combi])
-        prediction[4] = prediction[4] * np.log(sum(sadness_dict.values())/sadness_dict[combi])
-        prediction[5] = prediction[5] * np.log(sum(surprise_dict.values())/surprise_dict[combi])
+        prediction[0] = prediction[0] * np.log(sum(angry_dict.values())/angry_dict.get(combi, 0.1))
+        prediction[1] = prediction[1] * np.log(sum(fear_dict.values())/fear_dict.get(combi, 0.1))
+        prediction[2] = prediction[2] * np.log(sum(joy_dict.values())/joy_dict.get(combi, 0.1))
+        prediction[3] = prediction[3] * np.log(sum(love_dict.values())/love_dict.get(combi, 0.1))
+        prediction[4] = prediction[4] * np.log(sum(sadness_dict.values())/sadness_dict.get(combi, 0.1))
+        prediction[5] = prediction[5] * np.log(sum(surprise_dict.values())/surprise_dict.get(combi, 0.1))
 
         print('New data category : ',categories[np.argmax(prediction)])
         result_list[np.argmax(prediction)] += 1

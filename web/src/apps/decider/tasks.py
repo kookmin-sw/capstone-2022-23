@@ -23,50 +23,74 @@ TENSER_SERVING_IMGCLASS_URL = "http://mooddecider.com:8501/v1/models/IMGCLASS:pr
 @shared_task
 def trigger(user, site):
     text_mood, image_mood = get_mood(site.url)
-    qs = Result.objects.get(url=site, user=user)
-    qs.status = "completion"
-    qs.mood = text_mood + image_mood
-    qs.save()
+    result = Result.objects.get(url=site, user=user)
+    result.status = "completion"
+    if text_mood != None and image_mood != None:  # image_mood , text_mood 값이 모두 존재할 경우
+        result.text_mood = text_mood
+        result.image_mood = image_mood
+    elif text_mood == None and image_mood == None:  # image_mood, text_mood 값이 모두 없을 경우
+        result.status = "failure"
+        result.text_mood = "없음"
+        result.image_mood = "없음"
+    elif text_mood != None:  # text_mood 값이 있을 경우
+        result.text_mood = text_mood
+        result.image_mood = "분석 실패"
+    else:
+        result.text_mood = "분석 실패"
+        result.image_mood = image_mood
+    result.save()
 
 
 @shared_task
 def get_mood_from_text(text_list):
-    tokens, tokenizer = get_tokenized(text_list)
-    top_three = [0 for _ in range(13)]
+    try:
+        tokens, tokenizer = get_tokenized(text_list)
+        top_three = [0 for _ in range(13)]
+        top_three_index = [] 
 
-    for token in tokens:
-        sequences = tokenizer.texts_to_sequences([token])
+        for token in tokens:
+            sequences = tokenizer.texts_to_sequences([token])
 
-        if not sequences[0]:
-            continue
+            if not sequences[0]:
+                continue
 
-        data = json.dumps({"instances": sequences})
+            data = json.dumps({"instances": sequences})
 
-        result = requests.post(url=TENSER_SERVING_LSTM_URL, data=data)
-        predictions = json.loads(str(result.content, "utf-8"))["predictions"]
+            result = requests.post(url=TENSER_SERVING_LSTM_URL, data=data)
+            predictions = json.loads(str(result.content, "utf-8"))["predictions"]
 
-        # 순서에 유의
-        emotions = [
-            "성적",
-            "기쁨",
-            "두려움",
-            "환상",
-            "반항",
-            "불안",
-            "승리",
-            "재미",
-            "아름다움",
-            "이별",
-            "짜증",
-            "편안",
-            "활력",
-        ]
+            # 순서에 유의
+            emotions = [
+                "성적",
+                "기쁨",
+                "두려움",
+                "환상",
+                "반항",
+                "불안",
+                "승리",
+                "재미",
+                "아름다움",
+                "이별",
+                "짜증",
+                "편안",
+                "활력",
+            ]
 
-        for prediction in predictions:
-            top_three[np.argmax(prediction)] += 1
-
-    text_mood = emotions[np.argmax(top_three)]
-    return text_mood
+            for prediction in predictions:
+                top_three[np.argmax(prediction)] += 1
+                
+        for i, top_emotion in enumerate(top_three):
+            top_three_index.append((i,top_emotion))
+            
+        top_three_index.sort(key = lambda x: -x[1])
+            
+            
+        # text_mood = emotions[np.argmax(top_three)]
+        text_mood = emotions[top_three_index[0][0]] + " " + emotions[top_three_index[1][0]] + " " + emotions[top_three_index[2][0]] 
+        
+        return text_mood
+    except Exception as e:
+        print(e)
 
 
 @shared_task
@@ -82,53 +106,67 @@ def get_mood(url):
 @shared_task
 def crawl(url: str):
     image_list = []
-    html = urlopen(url).read()
-    soup = BeautifulSoup(html, "html.parser")
-    text_list = soup.get_text()
+    text_list = []
 
-    images = soup.find_all("img")
+    try:
+        html = urlopen(url).read()
+        soup = BeautifulSoup(html, "html.parser")
+        text_list = soup.get_text()
 
-    for i, img in enumerate(images):
-        src = img.get("src")
-        # print(src)
-        if src == None:
-            continue
-        if not src.startswith("http"):
-            continue
-        if src.endswith(".svg") or ".gif" in src:
-            continue
+        images = soup.find_all("img")
 
-        result = requests.get(src)
+        for image in images:
+            src = image.get("src")
 
-        img = Image.open(BytesIO(result.content))
-        img = img.convert("RGB")
-        img = img.resize((64, 64))
-        data = np.asarray(img)
-        data = np.array(data)
-        data = data.astype("float") / 256
-        data = data.reshape(-1, 64, 64, 3)
+            if src == None:
+                continue
+            if not src.startswith("http"):
+                continue
+            if src.endswith(".svg") or ".gif" in src:
+                continue
 
-        image_list.append(data)
+            result = requests.get(src)
+
+            byte_image = Image.open(BytesIO(result.content))
+            byte_image = byte_image.convert("RGB")
+            byte_image = byte_image.resize((64, 64))
+
+            data = np.asarray(byte_image)
+            data = np.array(data)
+            data = data.astype("float") / 256
+            data = data.reshape(-1, 64, 64, 3)
+
+            image_list.append(data)
+
+    except Exception as e:
+        print(e)
 
     return text_list, image_list
 
 
 def get_mood_from_image(image_list):
-    categories = ["anger", "fear", "joy", "love", "sadness", "surprise"]
-    result_list = [0, 0, 0, 0, 0, 0]
+    try:
+        categories = ["anger", "fear", "joy", "love", "sadness", "surprise"]
+        result_list = [0, 0, 0, 0, 0, 0]
 
-    for img in image_list:
-        data = json.dumps({"instances": img.tolist()})
+        if not image_list:
+            raise Excepetion
 
-        result = requests.post(TENSER_SERVING_IMGCLASS_URL, data=data)
-        predictions = json.loads(str(result.content, "utf-8"))["predictions"]
+        for img in image_list:
+            data = json.dumps({"instances": img.tolist()})
 
-        for prediction in predictions:
-            # print('New data category : ',categories[np.argmax(prediction)])
-            result_list[np.argmax(prediction)] += 1
+            result = requests.post(TENSER_SERVING_IMGCLASS_URL, data=data)
+            predictions = json.loads(str(result.content, "utf-8"))["predictions"]
 
-    image_mood = categories[np.argmax(result_list)]
-    return image_mood
+            for prediction in predictions:
+                # print('New data category : ',categories[np.argmax(prediction)])
+                result_list[np.argmax(prediction)] += 1
+
+        image_mood = categories[np.argmax(result_list)]
+        return image_mood
+    
+    except Exception as e:
+        print(e)
 
 
 @shared_task

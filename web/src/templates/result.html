@@ -3,25 +3,39 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="bg-white px-4 py-3 rounded shadow-sm">
-      <table class="table table-responsive">
+      <table id="table" class="table table-responsive">
         <thead>
+          텍스트 Mood 👉🏻 <b>성적 기쁨 두려움 환상 반항 불안 승리 재미 아름다움 이별 짜증 편안 활력</b>
+          <p>이미지 Mood 👉🏻 <b>anger fear joy love sadness surprise</b></p>
+          <p>분석 결과가 <span class="text-danger"> '모두 <b>없음</b>'</span>으로 나올 경우, <span class="text-warning">올바른
+              <b>URL</b></span>로
+            분석했는지
+            확인해보세요!</p>
           <tr>
-            <th>순번</th>
-            <th>날짜</th>
-            <th>URL</th>
-            <th>Status</th>
-            <th>결과</th>
+            <th width="5%">순번</th>
+            <th width="10%">날짜</th>
+            <th width="45%" style="word-break:break-all">URL</th>
+            <th width="10%">Status</th>
+            <th width="15%">Mood</th>
+            <th width="10%"> </th>
           </tr>
         </thead>
         <tbody>
           {% if result_list %}
-          {% for result in result_list %}
+          {% for result, converted_time in result_list%}
           <tr>
-            <td>{{ forloop.counter}}</td>
-            <td>{{ result.created_at }}</td>
-            <td>{{ result.url }}</td>
-            <td>{{ result.status }}</td>
-            <td>{{ result.mood }}</td>
+            <td width="5%">{{ forloop.counter}}</td>
+            <td width="10%">{{ converted_time}}</td>
+            <td width="45%" style="word-break:break-all"><a href="{{ result.url }}" target="_blank">
+                {{result.url}}</a></td>
+            <td width="10%">{{ result.status }}</td>
+            <td width="15%">
+              <p>텍스트 <span class="text-success"> {{ result.text_mood }}</span> <br>이미지
+                <span class="text-success"> {{ result.image_mood }} </span>
+              </p>
+            </td>
+            <td width="10%"><button class="btn btn-danger m-1" onclick="delete_result('{{ result.pk }}')">기록 제거</button>
+              </th>
           </tr>
           {% endfor %}
           {% else %}

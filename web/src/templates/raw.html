@@ -33,16 +33,24 @@
     <script src="{% static "main.js" %}"></script>
     <script>
         function handleClick() {
-            /*
             var imgDiv = document.getElementById("myImg");
+            var btn = document.getElementById("myBtn");
+
             if (imgDiv != null && imgDiv != "") {
                 imgDiv.style.display = "block";
+
             } else {
-                alert("안됨");
+                alert("");
             }
-            var btn = document.getElementById("myBtn");
-            btn.disabled = true;
-            */
+
+        }
+
+        function delete_result(result_id) {
+            if (confirm("선택하신 분석 결과를 정말 삭제하시겠습니까?") == true) {
+                location.href = "/mood/result/" + result_id + "/delete"
+            } else { //취소
+                return false;
+            }
         }
     </script>
 </body>
